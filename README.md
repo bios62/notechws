@@ -25,8 +25,13 @@ For the lab you may either use a python script where the sensordata is manually 
 
 [Arduino developer environment](https://link-url-here.org)https://codewith.mu/)
 
-
+<br />
+##Pictures
+<br />
 Picture of the device
+<br />
 ![Alt text](images/arduino.jpg?raw=true "Title")
+<br />
 Picture of the car
+<br />
 ![Alt text](images/bmw.jpg?raw=true "Title")
