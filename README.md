@@ -20,6 +20,33 @@ For the lab you may either use a python script where the sensordata is manually 
 
 ![Workflow diagram](images/lab_flow.jpg?raw=true "Title")
 
+## Workshop part 1
+
+Create tables and upload trial data
+
+## Workshop part 2
+
+Apply and test machine learning
+
+##  Workshop part 3
+
+Add REST services to machine learning function and sensordata upload
+
+## WOrkshop part 4
+
+Python Lab, 
+
+Add sensordata with interactive python script
+Add sensordata with Arduino device
+
+## Workshop part 5
+
+Install APEX app
+
+# Workshop part 
+
+Simulate or add real sensordata
+Run APEX app and visualize prediction
 
 ##Links and supporting documentation
 
