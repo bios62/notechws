@@ -1,0 +1,850 @@
+-- USER SQL
+CREATE USER user01 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user01;
+GRANT CONSOLE_DEVELOPER TO user01;
+GRANT DWROLE TO user01;
+GRANT OML_DEVELOPER TO user01;
+GRANT RESOURCE TO user01;
+ALTER USER user01 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user01 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user01 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user01',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user01',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user01',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user02 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user02;
+GRANT CONSOLE_DEVELOPER TO user02;
+GRANT DWROLE TO user02;
+GRANT OML_DEVELOPER TO user02;
+GRANT RESOURCE TO user02;
+ALTER USER user02 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user02 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user02 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user02',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user02',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user02',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user03 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user03;
+GRANT CONSOLE_DEVELOPER TO user03;
+GRANT DWROLE TO user03;
+GRANT OML_DEVELOPER TO user03;
+GRANT RESOURCE TO user03;
+ALTER USER user03 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user03 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user03 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user03',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user03',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user03',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user04 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user04;
+GRANT CONSOLE_DEVELOPER TO user04;
+GRANT DWROLE TO user04;
+GRANT OML_DEVELOPER TO user04;
+GRANT RESOURCE TO user04;
+ALTER USER user04 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user04 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user04 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user04',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user04',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user04',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user05 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user05;
+GRANT CONSOLE_DEVELOPER TO user05;
+GRANT DWROLE TO user05;
+GRANT OML_DEVELOPER TO user05;
+GRANT RESOURCE TO user05;
+ALTER USER user05 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user05 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user05 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user05',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user05',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user05',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user06 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user06;
+GRANT CONSOLE_DEVELOPER TO user06;
+GRANT DWROLE TO user06;
+GRANT OML_DEVELOPER TO user06;
+GRANT RESOURCE TO user06;
+ALTER USER user06 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user06 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user06 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user06',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user06',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user06',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user07 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user07;
+GRANT CONSOLE_DEVELOPER TO user07;
+GRANT DWROLE TO user07;
+GRANT OML_DEVELOPER TO user07;
+GRANT RESOURCE TO user07;
+ALTER USER user07 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user07 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user07 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user07',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user07',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user07',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user08 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user08;
+GRANT CONSOLE_DEVELOPER TO user08;
+GRANT DWROLE TO user08;
+GRANT OML_DEVELOPER TO user08;
+GRANT RESOURCE TO user08;
+ALTER USER user08 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user08 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user08 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user08',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user08',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user08',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user09 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user09;
+GRANT CONSOLE_DEVELOPER TO user09;
+GRANT DWROLE TO user09;
+GRANT OML_DEVELOPER TO user09;
+GRANT RESOURCE TO user09;
+ALTER USER user09 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user09 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user09 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user09',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user09',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user09',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user10 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user10;
+GRANT CONSOLE_DEVELOPER TO user10;
+GRANT DWROLE TO user10;
+GRANT OML_DEVELOPER TO user10;
+GRANT RESOURCE TO user10;
+ALTER USER user10 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user10 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user10 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user10',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user10',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user10',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user11 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user11;
+GRANT CONSOLE_DEVELOPER TO user11;
+GRANT DWROLE TO user11;
+GRANT OML_DEVELOPER TO user11;
+GRANT RESOURCE TO user11;
+ALTER USER user11 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user11 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user11 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user11',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user11',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user11',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user12 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user12;
+GRANT CONSOLE_DEVELOPER TO user12;
+GRANT DWROLE TO user12;
+GRANT OML_DEVELOPER TO user12;
+GRANT RESOURCE TO user12;
+ALTER USER user12 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user12 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user12 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user12',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user12',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user12',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user13 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user13;
+GRANT CONSOLE_DEVELOPER TO user13;
+GRANT DWROLE TO user13;
+GRANT OML_DEVELOPER TO user13;
+GRANT RESOURCE TO user13;
+ALTER USER user13 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user13 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user13 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user13',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user13',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user13',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user14 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user14;
+GRANT CONSOLE_DEVELOPER TO user14;
+GRANT DWROLE TO user14;
+GRANT OML_DEVELOPER TO user14;
+GRANT RESOURCE TO user14;
+ALTER USER user14 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user14 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user14 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user14',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user14',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user14',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user15 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user15;
+GRANT CONSOLE_DEVELOPER TO user15;
+GRANT DWROLE TO user15;
+GRANT OML_DEVELOPER TO user15;
+GRANT RESOURCE TO user15;
+ALTER USER user15 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user15 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user15 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user15',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user15',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user15',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user16 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user16;
+GRANT CONSOLE_DEVELOPER TO user16;
+GRANT DWROLE TO user16;
+GRANT OML_DEVELOPER TO user16;
+GRANT RESOURCE TO user16;
+ALTER USER user16 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user16 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user16 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user16',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user16',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user16',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user17 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user17;
+GRANT CONSOLE_DEVELOPER TO user17;
+GRANT DWROLE TO user17;
+GRANT OML_DEVELOPER TO user17;
+GRANT RESOURCE TO user17;
+ALTER USER user17 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user17 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user17 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user17',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user17',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user17',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user18 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user18;
+GRANT CONSOLE_DEVELOPER TO user18;
+GRANT DWROLE TO user18;
+GRANT OML_DEVELOPER TO user18;
+GRANT RESOURCE TO user18;
+ALTER USER user18 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user18 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user18 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user18',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user18',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user18',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user19 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user19;
+GRANT CONSOLE_DEVELOPER TO user19;
+GRANT DWROLE TO user19;
+GRANT OML_DEVELOPER TO user19;
+GRANT RESOURCE TO user19;
+ALTER USER user19 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user19 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user19 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user19',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user19',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user19',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user20 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user20;
+GRANT CONSOLE_DEVELOPER TO user20;
+GRANT DWROLE TO user20;
+GRANT OML_DEVELOPER TO user20;
+GRANT RESOURCE TO user20;
+ALTER USER user20 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user20 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user20 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user20',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user20',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user20',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user21 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user21;
+GRANT CONSOLE_DEVELOPER TO user21;
+GRANT DWROLE TO user21;
+GRANT OML_DEVELOPER TO user21;
+GRANT RESOURCE TO user21;
+ALTER USER user21 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user21 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user21 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user21',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user21',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user21',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user22 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user22;
+GRANT CONSOLE_DEVELOPER TO user22;
+GRANT DWROLE TO user22;
+GRANT OML_DEVELOPER TO user22;
+GRANT RESOURCE TO user22;
+ALTER USER user22 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user22 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user22 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user22',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user22',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user22',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user23 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user23;
+GRANT CONSOLE_DEVELOPER TO user23;
+GRANT DWROLE TO user23;
+GRANT OML_DEVELOPER TO user23;
+GRANT RESOURCE TO user23;
+ALTER USER user23 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user23 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user23 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user23',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user23',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user23',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user24 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user24;
+GRANT CONSOLE_DEVELOPER TO user24;
+GRANT DWROLE TO user24;
+GRANT OML_DEVELOPER TO user24;
+GRANT RESOURCE TO user24;
+ALTER USER user24 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user24 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user24 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user24',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user24',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user24',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
+-- USER SQL
+CREATE USER user25 IDENTIFIED BY PASSWORD;
+
+-- ADD ROLES
+GRANT CONNECT TO user25;
+GRANT CONSOLE_DEVELOPER TO user25;
+GRANT DWROLE TO user25;
+GRANT OML_DEVELOPER TO user25;
+GRANT RESOURCE TO user25;
+ALTER USER user25 DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
+
+-- ENABLE OML
+ALTER USER user25 GRANT CONNECT THROUGH OML$PROXY;
+
+-- QUOTA
+ALTER USER user25 QUOTA 500M ON DATA;
+
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'user25',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'user25',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'user25',
+            ENABLED => TRUE
+    );
+    commit;
+END;
+/
