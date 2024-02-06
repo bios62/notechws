@@ -1,3 +1,8 @@
+rem
+rem Version: 06.02.204
+rem
+rem script that creates all users
+rem
 -- USER SQL
 CREATE USER user01 IDENTIFIED BY PASSWORD;
 
