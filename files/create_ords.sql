@@ -1,6 +1,18 @@
 --
 -- define ORDS module workshop
 --
+--
+-- Cleanup old module
+--
+BEGIN
+  ORDS.DELETE_MODULE('workshop');
+  COMMIT;
+END;
+/
+--  DEFINE MODULE
+--
+-- define ORDS module workshop
+--
 --  DEFINE MODULE
 BEGIN
     ORDS.DEFINE_MODULE(
@@ -12,6 +24,7 @@ BEGIN
     );
     COMMIT;
 END;
+/
 --
 --  DEFINE TEMPLATE tempkmh, API for update both temp and kmh
 --
@@ -25,6 +38,7 @@ BEGIN
     );
     COMMIT;
 END;
+/
 --
 -- define POST handler for payload of
 -- type {"kmh":333,"temp":3.5}
@@ -42,7 +56,24 @@ BEGIN
     );
     COMMIT;
 END;
-
+/
+--
+-- define GET handler for listing the latest 25 logdata records
+--
+BEGIN
+    ORDS.DEFINE_HANDLER(
+        p_module_name => 'workshop',
+        p_pattern => 'tempkmh',
+        p_method => 'GET',
+        p_source_type => ords.source_type_collection_feed,
+        p_source => 'select logtime,temp,kmh from logdata order by logtime desc',
+        p_items_per_page => 25,
+        p_comments => '',
+        p_mimes_allowed => 'application/json'
+    );
+    COMMIT;
+END;
+/
 --
 --  DEFINE TEMPLATE kmh, API for update  kmh only
 --
@@ -56,6 +87,7 @@ BEGIN
     );
     COMMIT;
 END;
+/
 --
 -- define POST handler for payload of
 -- type {"kmh":333}
@@ -73,7 +105,7 @@ BEGIN
     );
     COMMIT;
 END;
-
+/
 --
 --  DEFINE TEMPLATE temp, API for update  temp only
 --
@@ -87,6 +119,7 @@ BEGIN
     );
     COMMIT;
 END;
+/
 --
 -- define POST handler for payload of
 -- type {"temp":3.5}
@@ -103,14 +136,6 @@ BEGIN
     );
     COMMIT;
 END;
-
-
-
-
-
-
-
-
-
+/
 
 
