@@ -23,6 +23,7 @@ For the lab you may either use a python script where the sensordata is manually 
 ## Workshop part 1
 
 Create tables and upload trial data
+![Instructions](labs/lab1.md)
 
 ## Workshop part 2
 
@@ -31,6 +32,7 @@ Apply and test machine learning
 ##  Workshop part 3
 
 Add REST services to machine learning function and sensordata upload
+![Instructions](labs/lab1.md)
 
 ## WOrkshop part 4
 
