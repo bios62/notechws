@@ -1,6 +1,15 @@
 # Lab 1 instructions
 
+## Purpose of lab
+
+The purpose of this lab is to start testing Autonomous database Actions, aka dbactions,  
+create the tables required and upload historical data for ML processing
+
+## Prerequsite
+
 You will get username, password and URL to the autonomous database from the instructor  
+
+## Instructions
 
 Assume your userid is user25 and your password is password25.  
 With the URL to Autnomous like : https://hiokitiiixxxx-jsonws.adb.eu-frankfurt-1.oraclecloudapps.com 
