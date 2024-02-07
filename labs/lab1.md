@@ -27,11 +27,11 @@ The URL to database actions, with SQL, ML and ORDS in this example will be:
 
 Logon and navigate to SQL:
 
-![DB Actions](images/dbactions.JPG)
+![DB Actions](../images/dbactions.JPG)
 
 
 Download the script create_tables.sql and run it from dbactions, eitehr by copy/paste into 
 sql area and run script, or run from the file  
   
-![DB Actions](images/dbactions2.JPG)
+![DB Actions](../images/dbactions2.JPG)
 
