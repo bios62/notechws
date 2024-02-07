@@ -62,8 +62,10 @@ Before insert
 declare 
   speed number;
 begin
-    select kmh into speed from current_speed where logtime=(select max(logtime) from current_speed);
-    :new.kmh:=speed;
+    if :new.kmh is NULL then
+       select kmh into speed from current_speed where logtime=(select max(logtime) from current_speed);
+        :new.kmh:=speed;
+    end if;
 end;
 /
 rem
