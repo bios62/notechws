@@ -34,7 +34,7 @@ Apply and test machine learning
 Add REST services to machine learning function and sensordata upload
 ![Instructions](labs/lab1.md)
 
-## WOrkshop part 4
+## Workshop part 4
 
 Python Lab, 
 
