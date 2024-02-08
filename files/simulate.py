@@ -11,6 +11,8 @@ program_version = " 1.0, 06.02.24"
 #
 # Inserts kmh only or kmh and temp
 #
+# If neither temp nor kmh is set, a RESAT API GET is performed
+#
 #
 # Commandline arguments or configfile parameters and defaults
 # Parameter name, default value, boolean true/false,"Help text"
@@ -24,7 +26,9 @@ config_parameters = [
     ["kmh", None, False, "running speed of car"],
 ]
 
-mandatory_parameters = ["url", "dbuser", "dbpwd", "kmh"]
+# For Autonomous, dbuser/dbs password is not used, no authentication required
+mandatory_parameters = ["url"]
+
 
 #########################################################################
 # verify_args
@@ -115,54 +119,75 @@ def pretty_print_POST(req):
         )
     )
 
+
 ########################################################################
-# api_get
-# Function to call GET methods of SCIM REST API
+# ords_api
+# Function to call GET or POST ORDS API
 ########################################################################
-def api_user(args,access_token,userid,op,payload=None,dbg=0):
+def ords_api(args, dbg=0):
     #
     # apiurl
     #
-    api=f'/admin/v1/Users/{userid}'
-    apiurl=args.url+api
-    if dbg>0:
+    apiurl = args.url
+    if dbg > 0:
         print(apiurl)
     #
     # Generate base 64 access token based on clientd/client secret
     #
-    headers = { 'Authorization' : f'Bearer {access_token}', "Content-Type":"application/json" }
+    if args.dbuser is not None:
+        headers = {
+            "Authorization": +basic_auth(args.dbuser, args.dbpwd),
+            "Content-Type": "application/json",
+        }
+    else:
+        headers = {"Content-Type": "application/json"}
     #
-    # Get the group attributes
+    #  Generate payload.
     #
-    api_status_code=-1
-    try:    
+    payload = {}
+    if not args.kmh is None:
+        payload["kmh"] = args.kmh
+    if not args.temp is None:
+        payload["temp"] = args.temp
+    #
+    # Process GET or POST
+    # if there are no payload, assume GET  (Query parameters in URL)
+    #
+    api_status_code = -1
+    try:
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-        if op == 'PATCH':
-            response = requests.get(url=apiurl, headers=headers, data=payload,verify=False)
-        else if op ==' DELETE':
-            response = requests.get(url=apiurl, headers=headers, verify=False)
+        if len(payload) > 0:
+            response = requests.post(
+                url=apiurl, headers=headers, data=json.dumps(payload), verify=False
+            )
         else:
-            print('Only patch/delete is applicable')
-            exit(1)
-        api_status_code=response.status_code
+            response = requests.get(url=apiurl, headers=headers, verify=False)
+        api_status_code = response.status_code
     except Exception as httpError:
-        print("Error processing api: "+api)
+        print("Error processing ORDS api: " + apiurl)
         print(httpError)
-        return(False)
-    if not (api_status_code >= 200 and  api_status_code <=201):
-        print('Fetching api '+api+' '+op+' status code: '+str(api_status_code))
-        if dbg>0:
+        return False
+    if not (api_status_code >= 200 and api_status_code <= 201):
+        print(
+            "Executing API "
+            + apiurl
+            + " "
+            + op
+            + " status code: "
+            + str(api_status_code)
+        )
+        if dbg > 0:
             print(response.content)
-            r = requests.Request(op,apiurl,headers=headers,data=payload)
+            if len(payload) > 0:
+                r = requests.Request("POST", apiurl, headers=headers, data=payload)
+            else:
+                r = requests.Request("GET", apiurl, headers=headers, data=None)
             prepared_request = r.prepare()
             pretty_print_POST(prepared_request)
-        return(False)
-    jresponse=json.loads(response.content)
-    if (dbg % 2) == 0 and dbg >0 :
-        print("#####################################################################")
-        print(response.content)
-        print("#####################################################################")
-    return(jresponse)
+        return False
+
+    return response
+
 
 ########################################################################
 # main function,
@@ -173,39 +198,55 @@ def main():
     # Get and verify args
     #
     args = parse_cmd_line()
-    print(args)
     if not verify_args(args):
         exit(1)
     #
     # fetch kmh and/or temp
     #
-    try:
-        kmh=int(args.kmh)
-    except Exception as e:
-        print("kmh should be an ingeter value")
-        print(e)
-        exit(1)
-    temp=args.temp
-    if args.temp not None:
+    kmh = args.kmh
+    if not args.kmh is None:
         try:
-            temp=float(ars.temp)
+            kmh = int(args.kmh)
         except Exception as e:
-            print("kmh should be an ingeter value")
+            print("kmh should be an integer value")
+            print(e)
+            exit(1)
+    temp = args.temp
+    if not args.temp is None:
+        try:
+            temp = float(args.temp)
+        except Exception as e:
+            print("temp should be an integer value")
             print(e)
             exit(1)
     #
-    #  Post update to ORDS
+    #  Execute REST API
     #
-    if do_post(args,kmh,temp):
-        print("Autonomous pdated successfully")
-    else
+    response = ords_api(args, 1)
+    if response == False:
         print("Update of autonomous failes, review error stack")
         exit(1)
-    #
+    else:
+        print(response)
+        #
+        # Post responses do not have any content
+        #
+        if len(response.content) > 0:
+            #
+            # Convert content to JSON and pretty print it
+            #
+            try:
+                json_formatted_str = json.dumps(
+                    response.content.decode("utf-8"), indent=2
+                )
+                print(json_formatted_str)
+            except Exception as e:
+                print(response.content)
+        print()
+        print("Autonomous successfully updated")
     # terminate
     #
     exit(0)
-     
 
 
 if __name__ == "__main__":

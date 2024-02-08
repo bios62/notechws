@@ -1,21 +1,21 @@
 # cegal-ws1502
 Material for Cegal workshop 15.02.2024
-<br />
+  
 The aim for the workshop is to build a Mobile APEX application that consumes sensor data,
 and based on the sensor data applies Machine Learning to create a prediction
-<br />
+  
 The prediction will be visualized in APEX
-<br />
-As Sensor we use an Arduino device with micro python hat posts sensordata via REST to an autonomous database.
-<br />
+  
+As Sensor we use an Arduino device with micro python that posts sensordata via REST to an autonomous database.
+  
 The sensor collects data and ingest into a logtable, vs. the APEX application extract the latest log data
 and display the predictions.
-<br />
-As sampledata we will use a set of data collected from a BMW EV from a trip from Oslo to Spain,
+  
+As sample data we will use a set of data collected from a BMW EV from a trip from Oslo to Spain,
 that is uploaded into the Autonomous DB, and the appl Oracle DB built in machine learning, ML.
-<br />
-For the lab you may either use a python script where the sensordata is manually entered,or use the micropython code from the device.
-<br />
+  
+For the lab you may either use a python script where the sensordata is manually entered, or use the micro python code from the device.
+  
 ### Workshop flow
 
 ![Workflow diagram](images/lab_flow.jpg?raw=true "Title")
@@ -27,41 +27,55 @@ Create tables and upload trial data
 
 ## Workshop part 2
 
-Apply and test machine learning
+Apply and test machine learning  
 
 ##  Workshop part 3
 
-Add REST services to machine learning function and sensordata upload
+Add REST services, for adding current speed and current temp, as basis for predictions    
+
+The following API will be added:  
+
+'''
+POST /wsapi/tempkmh  
+POST /wsapi/temp  
+POST /wsapi/kmh  
+GET /wsapi/tempkmh
+'''
+
 ![Instructions](labs/lab1.md)
 
 ## Workshop part 4
 
-Python Lab, 
-
-Add sensordata with interactive python script
-Add sensordata with Arduino device
+Python Lab  
+In this lab the Arduino temp sensor will be used to report current temp to the logdata table  
+The Arduino does not have a speed sensor, and the REST API used is /wsapi/temp that supplements the logdata record with the most recent value from the current_speed table.  
+During the lab, current_speed may be changed to generate different values in the logdata table  
+  
+As an alternative to usage of an Arduino, a python script is supplied to interactively update the logtable with the /wsapi/tempkmh API  
+  
+![Instructions](labs/lab4.md)
 
 ## Workshop part 5
 
 Install APEX app
 
-# Workshop part 
+## Workshop part 6
 
 Simulate or add real sensordata
-Run APEX app and visualize prediction
+Run APEX app and visualize prediction  
 
-##Links and supporting documentation
+## Links and supporting documentation
 
 [Arduino developer environment](https://link-url-here.org)https://codewith.mu/)
 
-<br />
-
+  
 ##Pictures
-<br />
+
+  
 Picture of the device
-<br />
+  
 ![Arduino](images/arduino.jpg?raw=true "Title")
-<br />
+  
 Picture of the car
-<br />
+  
 ![BMW](images/bmw.jpg?raw=true "Title")

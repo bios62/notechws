@@ -2,13 +2,13 @@
 
 ## Purpose of lab
 
-The prprose of this lab is to enavle ORDS API.
+The prprose of this lab is to enable ORDS API.
 The lab will create the follwoing API
 
-POST /wsapi/tempkmh    insert into logdata, payload: '{kmh:<current speed>,"temp":<current temp>}'
-POST /wsapi/temp    insert into logdata, payload: '{"temp":<current temp>}', the API adds latest value from current_speed as defautl value for kmh
-POST /wsapi/kmh    insert into current_speed, payload: '{kmh:<current speed>}' insert new defalt vale for speed, to be consumed by /wsapi/temp
-GET /wsapi/tempkmh  fetches 25 latest records in teh logdata table
+`POST /wsapi/tempkmh`    insert into logdata, payload: `'{kmh:<current speed>,"temp":<current temp>}'`
+`POST /wsapi/temp`    insert into logdata, payload: `'{"temp":<current temp>}'`, the API adds latest value from current_speed as defautl value for kmh
+`POST /wsapi/kmh`  insert into current_speed, payload: `'{kmh:<current speed>}'` insert new defalt vale for speed, to be consumed by /wsapi/temp
+`GET /wsapi/tempkm` fetches 25 latest records in the logdata table
 
 ## Prerequsite
 
@@ -16,52 +16,27 @@ Complete lab 1
 
 ## Instructions
 
-Copy/paste the script create_ords into dbactions, SL and run as script, or du the interactive lab
+The lab consist of two elements:
+- load the training data
+- build the ORDS environment
 
-## Verifications
-  
-The ORDS API can be verified with the verify_ords.sql script  
-Edit the script and add your autonomous URL and your username
 
-## Interactive instructions
+## Upload training data for machinelearning
 
-Create ORDS module
-Navigate to the ORDS screen in dbactions  
+Locate the file kjoredataV2.xlsx on your cloned git repo
 
-![ORDS Screen](../images/ords1.JPG)
+Run the instructions from ![Instructions](labs/dataload.md)
 
-![ORDS Screen](../images/ords2.JPG)
+## Create the ORDS REST Envrionment
 
-Slect modules from top menu  
+Run the instructions from ![Instructions](labs/ords.md)
 
-![ORDS Screen](../images/ords3.JPG)
-  
-Clik crate module, enter name "workshop", leave the rest, click create  
+## Verification of the ORDS REST API with curl
 
-![ORDS Screen](../images/ords4.JPG)
-  
-Module created  
+```
+curl -i -X POST -d '{"kmh":33}' -H 'Content-Type: application/json' https://<my adb url>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/wsapi/kmh
+curl -i -X POST -d '{"kmh":34,"temp":17}' -H 'Content-Type: application/json' https://<my adb url>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/wsapi/tempkmh
+curl -i -X POST -d '{"temp":18}' -H 'Content-Type: application/json' https://<my adb url>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/wsapi/temp
+curl  -X GET -H 'Content-Type: application/json' https://<my adb url>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/wsapi/tempkmh | jq '.'
+```
 
-![ORDS Screen](../images/ords5.JPG)
-  
-Click on "create teplate"  
-
-![ORDS Screen](../images/ords6.JPG)
-  
-Enter Template name "tempkmh", click create  
-
-![ORDS Screen](../images/ords7.JPG)
-  
-Select create handler, select POST and add PL/SQL statement  
-
-'begin insert into logdata (temp,kmh) values(:temp,:kmh); commit; end;
-  ![ORDS Screen](../images/ords12.JPG)
-  
-Select on MIMEs Allowed  
-
-![ORDS Screen](../images/ords14.JPG)
-  
-Well done, first API created  
-![ORDS Screen](../images/ords15.JPG)
-
-![ORDS Screen](../images/ords16.JPG)
