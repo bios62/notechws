@@ -2,7 +2,7 @@
 Material for Cegal workshop 15.02.2024
   
 The aim for the workshop is to build a Mobile APEX application that consumes sensor data,
-and based on the sensor data applies Machine Learning to create a prediction
+and based on the sensor data applies Machine Learning to create a prediction.
   
 The prediction will be visualized in APEX
   
@@ -14,7 +14,7 @@ and display the predictions.
 As sample data we will use a set of data collected from a BMW EV from a trip from Oslo to Spain,
 that is uploaded into the Autonomous DB, and the appl Oracle DB built in machine learning, ML.
   
-For the lab you may either use a python script where the sensordata is manually entered, or use the micro python code from the device.
+For the lab you may either use a python script where the sensordata is manually entered or use the micro python code from the device.
   
 ### Workshop flow
 
@@ -35,14 +35,14 @@ Add REST services, for adding current speed and current temp, as basis for predi
 
 The following API will be added:  
 
-'''
+```
 POST /wsapi/tempkmh  
 POST /wsapi/temp  
 POST /wsapi/kmh  
 GET /wsapi/tempkmh
-'''
+```
 
-![Instructions](labs/lab1.md)
+![Instructions](labs/lab3.md)
 
 ## Workshop part 4
 

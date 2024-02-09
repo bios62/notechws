@@ -2,8 +2,8 @@
 
 ## Purpose of lab
 
-The prprose of this lab is to enable ORDS API.
-The lab will create the follwoing API
+The purprose of this lab is to enable ORDS API.
+The lab will create the following API:
 
 `POST /wsapi/tempkmh`    insert into logdata, payload: `'{kmh:<current speed>,"temp":<current temp>}'`
 `POST /wsapi/temp`    insert into logdata, payload: `'{"temp":<current temp>}'`, the API adds latest value from current_speed as defautl value for kmh
@@ -16,9 +16,9 @@ Complete lab 1
 
 ## Instructions
 
-The lab consist of two elements:
-- load the training data
-- build the ORDS environment
+The lab consists of two elements:
+- Load the training data
+- Build the ORDS environment
 
 
 ## Upload training data for machinelearning

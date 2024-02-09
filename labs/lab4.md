@@ -2,9 +2,9 @@
 
 ## Purpose of lab
 
-The purpose of this lab is to update the logdata table eiter with an Arduino or with a python command-line script.
+The purpose of this lab is to update the logdata table either with an Arduino or with a python command-line script.
 
-The Python code demonstrates how to use the ORDS REST API for reading and updating tables/plsql in a autonomous database with REST  
+The Python code demonstrates how to use the ORDS REST API for reading and updating tables/plsql in an Autonomous database with REST.  
 
 ## Prerequsite
 
@@ -15,12 +15,12 @@ To run the commandline version you need requests and urllib3:
 'pip install requests
 'pip install urllib3
 
-The Arduino Lab require attaching the Arduino to you laptop for output from the USB port.
+The Arduino Lab require attaching the Arduino to your laptop for output from the USB port.
 One simple tool is Code with Mu  
 ![https://codewith.mu/](https://codewith.mu/)  
 
 
-## Commandline instructions
+## Command-line instructions
 
 The command-line Python script inserts into either the logdata or current_speed tables, or lists the last 25 records from logdata  
 Usage:  
