@@ -62,10 +62,10 @@ In this lab you will logon to your apex envrionment and upload an APEX applicati
 You have a predefined APEX workspace, with the same username/password as your database actions username/password
 The URL to the APEX Worksapace is:  
 
-` https://<your ATP instance>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/r/apex/workspace-sign-in/oracle-apex-sign-in?session=106975469353731
+`https://<your ATP instance>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/r/apex/workspace-sign-in/oracle-apex-sign-in?session=106975469353731`
 
 ![APEX logon](images/apex_logon.jpg)  
-![APEX logon](images/apex_workspace)
+![APEX workspace](images/apex_workspace.jpg)
 
 ## Workshop part 6
 
