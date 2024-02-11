@@ -5,8 +5,8 @@ rem
 rem historical data used for ML predictions
 rem
 rem
-drop table collected_data;
-CREATE TABLE collected_data 
+drop table trip;
+CREATE TABLE trip 
    (          "DATO" DATE, 
               "KL" NUMBER(38,0), 
               "KM" NUMBER(38,1), 
