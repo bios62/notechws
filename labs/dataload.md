@@ -2,31 +2,31 @@
 
 Navigate to Database Actions and click on data load
 
-![DataLoad](images/dl1.jpg)
+![DataLoad d11](dl1.jpg)
 
 Drag and drop kjoredataV2.xlsx into the file area, and click on upload
 
-![DataLoad](images/dl2.jpg)
+![DataLoad d12](dl2.jpg)
 
 Select settings
 
-![DataLoad](images/dl3.jpg)
+![DataLoad d13](dl3.jpg)
 
 Accept defaults an click next
 
-![DataLoad](images/dl4.jpg)
+![DataLoad d14](dl4.jpg)
 
-Change to load into existing table, correct date format, save settings
+Change to load into existing table trip, correct date format, save settings
 
-![DataLoad](images/dl5.jpg)
+![DataLoad d15](dl5.jpg)
 
 Run the upload
 
-![DataLoad](images/dl6.jpg)
+![DataLoad d16](dl6.jpg)
 
-Upload completed without errors, verify number of rows, 82 rows should be loaded
+Upload completed without errors, verify number of rows, 82 rows should be loaded into trip
 
-![DataLoad](images/dl7.jpg)
+![DataLoad d17](dl7.jpg)
 
 
 

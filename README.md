@@ -40,6 +40,7 @@ POST /wsapi/tempkmh
 POST /wsapi/temp  
 POST /wsapi/kmh  
 GET /wsapi/tempkmh
+GET /wsapi/predict?kmh=xxx&temp=xxx
 ```
 
 ![Instructions](labs/lab3.md)
@@ -57,7 +58,7 @@ As an alternative to usage of an Arduino, a python script is supplied to interac
 
 ## Workshop part 5
 
-In this lab you will logon to your apex envrionment and upload an APEX application that displays teh predicted power consumption at the current temp/speed.
+In this lab you will logon to your apex envrionment and upload an APEX application that displays the predicted power consumption at the current temp/speed.
   
 You have a predefined APEX workspace, with the same username/password as your database actions username/password
 The URL to the APEX Worksapace is:  

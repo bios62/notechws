@@ -3,7 +3,7 @@
 
 ## Build ORDS REST API with script
 
-Copy/paste the script create_ords[create ords script](../files/create_ords.sql) into dbactions, and run as script, or do the interactive lab
+Copy/paste the script create_ords.sql [](../files/create_ords.sql) into dbactions, and run as script, or do the interactive lab
 
 ## Interactive instructions, ORDS creation
 
@@ -28,19 +28,21 @@ Module created, In the workshop title, select create template
 
 You will now create the tempkmh REST API with POST  
 Click on "create template"  
+Enter Template name "tempkmh", click create  
 
 ![ORDS Screen](../images/ords6.JPG)
   
-Enter Template name "tempkmh", click create  
+Template created, note the Create Handler
+Click create handler 
 
 ![ORDS Screen](../images/ords7.JPG)
-  
-Click create handler, select POST and add PL/SQL statement:  
+
+Select POST and add PL/SQL statement: 
 
 `begin insert into logdata (temp,kmh) values(:temp,:kmh); commit; end;`  
 
 ![ORDS Screen](../images/ords8.JPG)
- 
+
 ![ORDS Screen](../images/ords9.JPG)
 
 Navigate to MIMEs allowed and select application/json and click add  
@@ -63,13 +65,13 @@ Repeat the steps for creating the temp REST API with POST
 
 ![ORDS Screen](../images/ords15.JPG)
 
+Click create handler  
+
 ![ORDS Screen](../images/ords16.JPG)
 
 Enter the PL/SQL below in the handler:  
 
 `begin insert into logdata (temp) values(:temp); commit; end;` 
-
-![ORDS Screen](../images/ords16.JPG)
 
 ![ORDS Screen](../images/ords17.JPG)
 
