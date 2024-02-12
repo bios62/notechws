@@ -65,6 +65,8 @@ The URL to the APEX Worksapace is:
 `https://<your ATP instance>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/r/apex/workspace-sign-in/oracle-apex-sign-in?session=106975469353731`
 
 ![APEX logon](images/apex_logon.jpg)  
+  
+
 ![APEX workspace](images/apex_workspace.jpg)
 
 ## Workshop part 6
@@ -80,10 +82,13 @@ Run APEX app and visualize prediction
 ## Pictures
 
   
-Picture of the device
+
   
 ![Arduino](images/arduino.jpg?raw=true "Title")
   
-Picture of the car
+  The device
+  
   
 ![BMW](images/bmw.jpg?raw=true "Title")
+  
+  Der Wagen

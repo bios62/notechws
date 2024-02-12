@@ -17,7 +17,7 @@ Complete lab 1
 ## Instructions
 
 The lab consists of two elements:
-- Load the training data
+- Load the training data into the trip table
 - Build the ORDS environment
 
 
@@ -25,11 +25,11 @@ The lab consists of two elements:
 
 Locate the file kjoredataV2.xlsx on your cloned git repo
 
-Run the instructions from ![Instructions](labs/dataload.md)
+Run the instructions from ![Instructions](dataload.md)
 
 ## Create the ORDS REST Envrionment
 
-Run the instructions from ![Instructions](labs/ords.md)
+Run the instructions from ![Instructions](ords.md)
 
 ## Verification of the ORDS REST API with curl
 

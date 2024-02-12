@@ -25,13 +25,13 @@ One simple tool is Code with Mu
 The command-line Python script inserts into either the logdata or current_speed tables, or lists the last 25 records from logdata  
 Usage:  
 Get the 25 latest records from logdata  
-`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp  
+`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp` 
 Create new logdata record with temp and speed  
-`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --temp 23  --kmh 74
+`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --temp 23  --kmh 74` 
 Create new logdata record, but apply latest record in current_speed as speed  
-`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --temp 23
+`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --temp 23` 
 Create new record in the current_speed table  
-`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --speed 75
+`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --speed 75` 
 
 ## Arduino instructions
 
