@@ -1,5 +1,6 @@
-# cegal-ws1502
-Material for Cegal workshop 15.02.2024
+# NO  
+
+Material for No Tech Iot/ORDS/REST/ML workshop 28.02.2024
 
 # Summary
 
