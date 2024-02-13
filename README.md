@@ -22,13 +22,13 @@ ORDS is a major security feature, and the most important properties of ORDS from
 Where do ORDS differ from building yours own API written in a language like node.js or Python? The main difference is a) the security and b) the simplicity. You write no other code than PL/SQL or SQL that is behind the REST API, ORDS via metadata handles the rest.  
 In this lab we will demonstrate how you easily can add database updates from a tiny IoT edge to Autonomous via ORDS REST API, apply Machine Learning on the data, protected by the authorization of the Autonomous Database, and visualize the data in a simple secure APEX application.  
 
-[Autonomous ORDS securty Architecture](images/ords-architecture.jpg)]
+![Autonomous ORDS security Architecture](images/ords-architecture.jpg)
 
 # Oracle OCI Next Generation Firewall
 
 In interest of time, configuration of the Firewall, and building a complete OCI network with the NGFW is not a part of the lab.
 The architecture can easily be extended run Oracle ATP on a private IP only and filter all ORDS REST API through the NGFW.
-For details please refer to: [](https://docs.oracle.com/en/solutions/oci-network-firewall/index.html#GUID-875E911C-8D7D-4205-952B-5E8FAAD6C6D3)  
+For details please refer to: [OCI Network Firewall](https://docs.oracle.com/en/solutions/oci-network-firewall/index.html#GUID-875E911C-8D7D-4205-952B-5E8FAAD6C6D3)  
 
 ![OCI NGFW](images/oci-network-firewall-arch.png)
 
@@ -53,16 +53,17 @@ For the lab you may either use a python script where the sensordata is manually 
   
 ### Workshop flow
 
-![Workflow diagram](images/lab_flow2.jpg?raw=true "Title")
+![Workflow diagram](images/lab_flow2.jpg?raw=true "Lab Flow")
 
 ## Workshop part 1
 
-Create tables and upload trial data  
-![Instructions](labs/lab1.md)
+In this lab we will create tables and upload training data  
+[Instructions Lab 1](labs/lab1.md)
 
 ## Workshop part 2
 
-Apply and test machine learning  
+In this lab you will create the different AI ML models, and test/verify your models
+[Instructons Lab 2](labs/lab2.md)
 
 ##  Workshop part 3
 
@@ -78,7 +79,7 @@ GET /wsapi/tempkmh
 GET /wsapi/predict?kmh=xxx&temp=xxx
 ```
 
-![Instructions](labs/lab3.md)
+[Instructions Lab3](labs/lab3.md)
 
 ## Workshop part 4
 
@@ -89,13 +90,15 @@ During the lab, current_speed may be changed to generate different values in the
   
 As an alternative to usage of an Arduino, a python script is supplied to interactively update the logtable with the /wsapi/tempkmh API  
   
-![Instructions](labs/lab4.md)
+[Instructions Lab 4](labs/lab4.md)
 
 ## Workshop part 5
 
 In this lab you will logon to your apex envrionment and upload an APEX application that displays the predicted power consumption at the current temp/speed.
   
 You have a predefined APEX workspace, with the same username/password as your database actions username/password
+
+[Instructions Lab 5](labs/lab5.md)  
 The URL to the APEX Worksapace is:  
 
 `https://<your ATP instance>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/r/apex/workspace-sign-in/oracle-apex-sign-in?session=106975469353731`
