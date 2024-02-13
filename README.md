@@ -62,8 +62,8 @@ In this lab we will create tables and upload training data
 
 ## Workshop part 2
 
-In this lab you will create the different AI ML models, and test/verify your models
-[Instructons Lab 2](labs/lab2.md)
+In this lab you will create the different AI ML models, and test/verify your models  
+[Instructions Lab 2](labs/lab2.md)
 
 ##  Workshop part 3
 
