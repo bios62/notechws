@@ -1,6 +1,39 @@
 # cegal-ws1502
 Material for Cegal workshop 15.02.2024
-  
+
+# Summary
+
+The target of the workshop is to learn how you may integrate autonomous database with machine learning and edge devices in a secure way.
+
+The workshop bases the AI Predictions on data collected with a BMW i5 EV from Oslo to Spain, collecting speed, temperature, power consumption in KWH, altitude and location.
+The collected data is the use to generate a ML based regression, for predicting power consumption based on speed and temperature.
+The real-time temperature and speed is collected via a microcontroller programmed with micro Python, feeding real-time data into Autonomous Database 
+via REST, the prediction is then visualized and presented to the user on a mobile device with APEX.
+As the IoT world might be dangerous, it is important to protect the database, so only the required REST AP is exposed to the IoT device.
+
+# Secure communication with Oracle Database over REST
+
+Oracle Data Rest Services, ORDS, is the technology for exposing and updating data in an Oracle Autonomous Database via REST Services.  
+ORDS is a major security feature, and the most important properties of ORDS from a security point of view are:  
+-	No SQL connection is exposed, only REST. Developer can select and manipulate data with REST, and the SQL connection is not exposed.  
+-	All Communication is over HTTPS; a protocol that is easy to route and can be routed through Next Generation Firewalls like the Palo Alto powered OCI Firewall.  
+-	Most important, it is the developer of the RST API that defines the SQL statement or PL/SQL statement behind the REST API. No other SQL will be permitted, and the SQL behind the REST service is not exposed.  
+-	Authentication and authorization are under control of either the ORDS server, with OAUTH or under the control of the Autonomous database authentication and authorization.  
+Where do ORDS differ from building yours own API written in a language like node.js or Python? The main difference is a) the security and b) the simplicity. You write no other code than PL/SQL or SQL that is behind the REST API, ORDS via metadata handles the rest.  
+In this lab we will demonstrate how you easily can add database updates from a tiny IoT edge to Autonomous via ORDS REST API, apply Machine Learning on the data, protected by the authorization of the Autonomous Database, and visualize the data in a simple secure APEX application.  
+
+# Oracle OCI Next Generation Firewall
+
+In interest of time, configuration of the Firewall, and building a complete OCI network with the NGFW is not a part of the lab.
+The architecture can easily be extended run Oracle ATP on a private IP only and filter all ORDS REST API through the NGFW.
+For details please refer to: [](https://docs.oracle.com/en/solutions/oci-network-firewall/index.html#GUID-875E911C-8D7D-4205-952B-5E8FAAD6C6D3)  
+
+![OCI NGFW](oci-network-firewall-arch.png)
+
+
+
+# Workshop goal
+
 The aim for the workshop is to build a Mobile APEX application that consumes sensor data,
 and based on the sensor data applies Machine Learning to create a prediction.
   
@@ -18,7 +51,7 @@ For the lab you may either use a python script where the sensordata is manually 
   
 ### Workshop flow
 
-![Workflow diagram](images/lab_flow.jpg?raw=true "Title")
+![Workflow diagram](images/lab_flow2.jpg?raw=true "Title")
 
 ## Workshop part 1
 

@@ -77,40 +77,58 @@ Enter the PL/SQL below in the handler:
 
 ![ORDS Screen](../images/ords18.jpg)
 
+The REST API temp is added. 
+
 ![ORDS Screen](../images/ords19.jpg)
 
-The REST API temp is added.  
+ Repeat the steps and add REST API km, click create template
 
 ![ORDS Screen](../images/ords20.jpg)  
 
-Repeat the steps and add REST API kmh, POST. 
-Add the following PL/SQL in the POST handler:  
-`begin insert into current_speed (kmh) values(:kmh); commit; end;` 
+Create tenplate kmh  
 
 ![ORDS Screen](../images/ords21.jpg)
 
+Create the POST handler for kmh
+
 ![ORDS Screen](../images/ords22.jpg)
+
+Add the following PL/SQL in the POST handler:  
+`begin insert into current_speed (kmh) values(:kmh); commit; end;` 
 
 ![ORDS Screen](../images/ords23.jpg)
 
 ![ORDS Screen](../images/ords24.jpg)
 
+The REST API kmh is complete  
+
 ![ORDS Screen](../images/ords25.jpg)
 
 The last REST API, preditct GET deviates a bit.  
-This REST API select ad value with a PL/SQL having two input query parameters
+This REST API select ad value with a PL/SQL having two input query parameters  
 
 Repeat the steps and add REST API predict, GET. 
-Add the following PL/SQL in the POST handler:  
-`begin :p_result:=predict_consumption(:p_kmh,:p_temp); end;` 
-
+Create tempplate predict  
+  
 ![ORDS Screen](../images/ords30.jpg)
 
+Add the handler for GET  
+
 ![ORDS Screen](../images/ords31.jpg)
+  
+Select Source type PL/SQL and add the following PL/SQL in the GET handler:  
+   
+`begin :p_result:=predict_consumption(:p_kmh,:p_temp); end;` 
 
 ![ORDS Screen](../images/ords32.jpg)
 
+Add MIMEs Allowed  
+
 ![ORDS Screen](../images/ords33.jpg)
+
+For PL/SQL type GTE we need to define the result data that will be in the JSON response.
+We define a response value name "response" as a OUT parameter with the PL/SQL variable p_result as bind variable  
+Clict create parameter  
 
 ![ORDS Screen](../images/ords34.jpg)
 
@@ -118,6 +136,8 @@ The GET REST API needs to define the return value from the PL/SQL function as a 
 Create the parameter:  
 
 ![ORDS Screen](../images/ords34.jpg)
+
+And the REST API GET predict is complete
 
 ![ORDS Screen](../images/ords35.jpg)
 
