@@ -1,4 +1,4 @@
-# Lab 5 instructions
+# Lab 2 instructions
 
 ## Purpose of the lab
 
@@ -70,8 +70,9 @@ SELECT prediction (SVM1 using 100 AS kmh,20 AS CELSIUS) FROM DUAL;
 
 SELECT prediction (SVM1 using 130 AS kmh,20 AS CELSIUS) FROM DUAL;
 
-SELECT p```diction (SVM1 using 100 AS kmh,10 AS CELSIUS) FROM DUAL;
+SELECT prediction (SVM1 using 100 AS kmh,10 AS CELSIUS) FROM DUAL;
 
+```
 Does it look ok ?
 If not, what is wrong ?
 
@@ -149,7 +150,7 @@ END;
 select predict_consumption(100,20) from dual;
 ```  
 
-## Step 7
+## Step 7, new attempt
 
 It would be useful to have a view with consumptions at different speeds and temperatures:
 
@@ -202,7 +203,7 @@ create table consumptionSVM as select * from consumption;
 select * from consumptionSVM order by celsius;
 ```
 
-## Step 7
+## Step 7, Yet a new attempt  
 
 Another useful model is the General Linear Model (GLM).
 To try this model, we have to repeat the tasks from Step 2 - with some small changes. Let's try the following:
@@ -259,7 +260,7 @@ SELECT prediction (SVM1 using 100 AS kmh,20 AS CELSIUS) FROM DUAL;
 SELECT prediction (SVM1 using 100 AS kmh,10 AS CELSIUS) FROM DUAL;
 ```
 
-## Step 7
+## Step 7, Yet a new attempt  
 
 Maybe we should switch to using SVM1.  Here is one simple way to switch between the models:
 ```
