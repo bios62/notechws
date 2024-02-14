@@ -46,7 +46,12 @@ For details please refer to: [OCI Network Firewall](https://docs.oracle.com/en/s
 
 
 # Using Machine Learning and predictions in Autonomous Database
-
+  
+Machine Learning in Oracle Database supports data exploration, preparation, and machine learning (ML) modeling at scale using SQL, R, Python, REST, automated machine learning (AutoML), and no-code interfaces.  
+- More than 30 high performance in-database algorithms producing models for immediate use in applications. 
+- Keeping data in the database, no need to move or copy data. 
+With Oracle ML organizations can simplify their overall architecture and maintain data synchronization and security. It enables data scientists and other data professionals to build models quickly by simplifying and automating key elements of the machine learning lifecycle. Oracle ML is inlcued in the license of any Oracle Database Edition.
+  
 # Workshop goal
 
 The aim for the workshop is to build a Mobile APEX application that consumes sensor data,
