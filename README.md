@@ -3,8 +3,8 @@
 Material for Oracle Norway Tech Community Iot/ORDS/REST/ML workshop 28.02.2024
   
 Brought to you by:  
-Frode Pedersen, frode.pedersen@oracle.com
-Inge Os, inge.os@oracle.com 
+Frode Pedersen, frode.pedersen@oracle.com  
+Inge Os, inge.os@oracle.com   
   
 # Summary
 
