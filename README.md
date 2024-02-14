@@ -1,4 +1,4 @@
-# NO  
+# NO  TECH Workshop 28.02.2024
 
 Material for No Tech Iot/ORDS/REST/ML workshop 28.02.2024
 
