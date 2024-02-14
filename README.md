@@ -10,7 +10,10 @@ The workshop bases the AI Predictions on data collected with a BMW i5 EV from Os
 The collected data is the use to generate a ML based regression, for predicting power consumption based on speed and temperature.
 The real-time temperature and speed is collected via a microcontroller programmed with micro Python, feeding real-time data into Autonomous Database 
 via REST, the prediction is then visualized and presented to the user on a mobile device with APEX.
-As the IoT world might be dangerous, it is important to protect the database, so only the required REST AP is exposed to the IoT device.
+As the IoT world might be dangerous, it is important to protect the database, so only the required REST AP is exposed to the IoT device.  
+  
+
+![Workflow diagram](images/lab_flow3.jpg?raw=true "Lab Flow")
 
 # Secure communication with Oracle Database over REST
 
@@ -25,15 +28,7 @@ In this lab we will demonstrate how you easily can add database updates from a t
 
 ![Autonomous ORDS security Architecture](images/ords-architecture.jpg)
 
-# Oracle OCI Next Generation Firewall
-
-In interest of time, configuration of the Firewall, and building a complete OCI network with the NGFW is not a part of the lab.
-The architecture can easily be extended run Oracle ATP on a private IP only and filter all ORDS REST API through the NGFW.
-For details please refer to: [OCI Network Firewall](https://docs.oracle.com/en/solutions/oci-network-firewall/index.html#GUID-875E911C-8D7D-4205-952B-5E8FAAD6C6D3)  
-
-![OCI NGFW](images/oci-network-firewall-arch.png)
-
-
+# Using Machine Learning and predictions in Autonomous Database
 
 # Workshop goal
 
@@ -52,9 +47,7 @@ that is uploaded into the Autonomous DB, and the appl Oracle DB built in machine
   
 For the lab you may either use a python script where the sensordata is manually entered or use the micro python code from the device.
   
-### Workshop flow
 
-![Workflow diagram](images/lab_flow2.jpg?raw=true "Lab Flow")
 
 ## Workshop part 1
 
