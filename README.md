@@ -1,7 +1,11 @@
 # NO  TECH Workshop 28.02.2024
 
-Material for No Tech Iot/ORDS/REST/ML workshop 28.02.2024
-
+Material for Oracle Norway Tech Community Iot/ORDS/REST/ML workshop 28.02.2024
+  
+Brought to you by:  
+Frode Pedersen, frode.pedersen@oracle.com
+Inge Os, inge.os@oracle.com 
+  
 # Summary
 
 The target of the workshop is to learn how you may integrate autonomous database with machine learning and edge devices in a secure way.
@@ -14,6 +18,10 @@ As the IoT world might be dangerous, it is important to protect the database, so
   
 
 ![Workflow diagram](images/lab_flow3.jpg?raw=true "Lab Flow")
+  
+Below is some screenshots from the APEX app we will install:  
+
+![Apex app](images/apex_app.jpg)
 
 # Secure communication with Oracle Database over REST
 
