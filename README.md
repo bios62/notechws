@@ -26,7 +26,16 @@ ORDS is a major security feature, and the most important properties of ORDS from
 Where do ORDS differ from building yours own API written in a language like node.js or Python? The main difference is a) the security and b) the simplicity. You write no other code than PL/SQL or SQL that is behind the REST API, ORDS via metadata handles the rest.  
 In this lab we will demonstrate how you easily can add database updates from a tiny IoT edge to Autonomous via ORDS REST API, apply Machine Learning on the data, protected by the authorization of the Autonomous Database, and visualize the data in a simple secure APEX application.  
 
-![Autonomous ORDS security Architecture](images/ords-architecture.jpg)
+![Autonomous ORDS security Architecture](images/ords-architecture.jpg)  
+  
+  # Oracle OCI Next Generation Firewall
+
+In interest of time, configuration of the Firewall, and building a complete OCI network with the NGFW is not a part of the lab.
+The architecture can easily be extended run Oracle ATP on a private IP only and filter all ORDS REST API through the NGFW.
+For details please refer to: [OCI Network Firewall](https://docs.oracle.com/en/solutions/oci-network-firewall/index.html#GUID-875E911C-8D7D-4205-952B-5E8FAAD6C6D3)  
+
+![OCI NGFW](images/oci-network-firewall-arch.png)  
+
 
 # Using Machine Learning and predictions in Autonomous Database
 
@@ -93,14 +102,6 @@ In this lab you will logon to your apex envrionment and upload an APEX applicati
 You have a predefined APEX workspace, with the same username/password as your database actions username/password
 
 [Instructions Lab 5](labs/lab5.md)  
-The URL to the APEX Worksapace is:  
-
-`https://<your ATP instance>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/r/apex/workspace-sign-in/oracle-apex-sign-in?session=106975469353731`
-
-![APEX logon](images/apex_logon.jpg)  
-  
-
-![APEX workspace](images/apex_workspace.jpg)
 
 ## Workshop part 6
 
