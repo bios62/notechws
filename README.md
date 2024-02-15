@@ -1,6 +1,6 @@
-# NO  TECH Workshop 28.02.2024
+# NO TECH Workshop 
 
-Material for Oracle Norway Tech Community Iot/ORDS/REST/ML workshop 28.02.2024
+Material for Oracle Norway Tech Community Iot/ORDS/REST/ML workshop 
   
 Brought to you by:  
 Frode Pedersen, frode.pedersen@oracle.com  
@@ -14,14 +14,15 @@ The workshop bases the AI Predictions on data collected with a BMW i5 EV from Os
 The collected data is the use to generate a ML based regression, for predicting power consumption based on speed and temperature.
 The real-time temperature and speed is collected via a microcontroller programmed with micro Python, feeding real-time data into Autonomous Database 
 via REST, the prediction is then visualized and presented to the user on a mobile device with APEX.
-As the IoT world might be dangerous, it is important to protect the database, so only the required REST AP is exposed to the IoT device.  
-  
+As the IoT world might be dangerous, it is important to protect the database, so only the required REST AP is exposed to the IoT device.
 
+  
 ![Workflow diagram](images/lab_flow3.jpg?raw=true "Lab Flow")
   
 Below is some screenshots from the APEX app we will install:  
 
 ![Apex app](images/apex_app.jpg)
+
 
 # Secure communication with Oracle Database over REST
 
@@ -52,6 +53,7 @@ Machine Learning in Oracle Database supports data exploration, preparation, and 
 - Keeping data in the database, no need to move or copy data. 
 With Oracle ML organizations can simplify their overall architecture and maintain data synchronization and security. It enables data scientists and other data professionals to build models quickly by simplifying and automating key elements of the machine learning lifecycle. Oracle ML is inlcued in the license of any Oracle Database Edition.
   
+
 # Workshop goal
 
 The aim for the workshop is to build a Mobile APEX application that consumes sensor data,
@@ -69,17 +71,22 @@ that is uploaded into the Autonomous DB, and the appl Oracle DB built in machine
   
 For the lab you may either use a python script where the sensordata is manually entered or use the micro python code from the device.
   
+### Workshop flow
 
+![Workflow diagram](images/lab_flow2.jpg?raw=true "Lab Flow")
 
 ## Workshop part 1
 
 In this lab we will create tables and upload training data  
 [Instructions Lab 1](labs/lab1.md)
 
+
+
 ## Workshop part 2
 
 In this lab you will create the different AI ML models, and test/verify your models  
 [Instructions Lab 2](labs/lab2.md)
+
 
 ##  Workshop part 3
 
@@ -100,13 +107,30 @@ GET /wsapi/predict?kmh=xxx&temp=xxx
 ## Workshop part 4
 
 Python Lab  
-In this lab the Arduino temp sensor will be used to report current temp to the logdata table  
+In this lab a Arduino based microcontroller for a temp sensor will be used to report current temp to the logdata table  
 The Arduino does not have a speed sensor, and the REST API used is /wsapi/temp that supplements the logdata record with the most recent value from the current_speed table.  
-During the lab, current_speed may be changed to generate different values in the logdata table  
+During the lab, current_speed may be changed to generate different values in the logdata table with the simulator
+
+
+`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --speed 75`    
+
+or curl:  
+
+`curl -X-POST -d '{"current_speed":75}' -H '{"Content Type":"application/json"}' https:://<your ATP URL>/ords/<your username>/wsapi/speed`
+
+or run the python script [](files/)getprediction.pyton
+
   
 As an alternative to usage of an Arduino, a python script is supplied to interactively update the logtable with the /wsapi/tempkmh API  
   
-[Instructions Lab 4](labs/lab4.md)
+### Python desktop lab  
+
+
+[Instructions Lab 4 desktop](labs/lab4-desktop.md) 
+
+### Python Microcontroller/Micropython lab  (Optional, du this lab at the end if time permit)
+
+[Instructions Lab 4 Arduino](labs/lab4-arduino.md) 
 
 ## Workshop part 5
 
@@ -123,7 +147,7 @@ Run APEX app and visualize prediction
 
 ## Links and supporting documentation
 
-[Arduino developer environment] (https://link-url-here.org)https://codewith.mu/)
+![Arduino developer environment] (https://link-url-here.org)https://codewith.mu/)
 
   
 ## Pictures

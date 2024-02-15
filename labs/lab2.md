@@ -8,7 +8,7 @@ The purpose of this lab is to  build machine learning models to predict consumpt
 
 ## Prerequisites
 
-TRIP table is loaded into the schema.
+Complete lab 1 and ensure that  `TRIP` table is loaded into the schema.
 
 
 ## Database Actions SQL instructions for the first Machine Learning experiment.
@@ -18,7 +18,8 @@ First we need to create the source - for this we will create a view on top of th
 
 ## Step 1
 
-```create or replace view mlinput (ID,KMH,KWP100)as (
+```
+create or replace view mlinput (ID,KMH,KWP100)as (
 SELECT KMH,KMH,KWP100 FROM trip
 where km>35 -- ignore short drives where initial car heating can disturb.
 and mm is null -- ignore drives with rain/snow 

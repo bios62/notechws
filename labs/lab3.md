@@ -2,7 +2,7 @@
 
 ## Purpose of lab
 
-The purprose of this lab is to enable ORDS API.
+The purprose of this lab is to build and enable ORDS API.
 The lab will create the following API:
 
 `POST /wsapi/tempkmh`    insert into logdata, payload: `'{kmh:<current speed>,"temp":<current temp>}'`  
@@ -14,31 +14,42 @@ The lab will create the following API:
 
 Complete lab 1
 
+Ensure the predict_consumption PL/SQL procedure was successfully created in lab 2.
+
 ## Instructions
 
-The lab consists of two elements:
-- Load the training data into the trip table
-- Build the ORDS environment
+The lab gives step by step instruction on how to in build the REST APIs.
 
+## Build ORDS REST API with script
 
-## Upload training data for machinelearning
+Copy/paste the script create_ords.sql [](../files/create_ords.sql) into dbactions, and run as script, or do the interactive lab
 
-Locate the file kjoredataV2.xlsx on your cloned git repo
-
-Run the instructions from ![Instructions](dataload.md)
-
-## Create the ORDS REST Envrionment
+## Create the ORDS REST Envrionment interatively
 
 Run the instructions from ![Instructions](ords.md)
 
 ## Verification of the ORDS REST API with curl
 
-```
-curl -i -X POST -d '{"kmh":33}' -H 'Content-Type: application/json' https://<my adb url>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/wsapi/kmh
-curl -i -X POST -d '{"kmh":34,"temp":17}' -H 'Content-Type: application/json' https://<my adb url>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/wsapi/tempkmh
-curl -i -X POST -d '{"temp":18}' -H 'Content-Type: application/json' https://<my adb url>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/wsapi/temp
-curl  -X GET -H 'Content-Type: application/json' https://<my adb url>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/wsapi/tempkmh | jq '.'
-curl  -X GET -H 'Content-Type: application/json' https://<my adb url>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/wsapi/predict?temp=32&speed=85 | jq '.'
+There is a prebuilt script [verify_ords.bash])../files/verify_ords.bash) that can be used for verification  
+Edit the lines with correct values:  
 
+```
+URL=https://myautonomous.adb.us-phoenix-1.oraclecloudapps.com
+USER=demouser03
+```
+
+## Test a prediction with python
+
+Edit the script [getprediction.py](../files/getprediction.py) and add the correct values for.  
+
+```
+atp_url='https://<your ATP URL>'
+atp_username='<your username>'
+```
+and execute:
+```
+python getprediction.py 86 2.2
+{"result": "40"}
+Estimated range: 40
 ```
 

@@ -13,14 +13,14 @@ You will get username, password and URL to the autonomous database from the inst
 
 Assume your userid is user25 and your password is password25.  
   
-With the URL to Autnomous like : https://hiokitiiixxxx-jsonws.adb.eu-frankfurt-1.oraclecloudapps.com 
+With the URL to Autnomous like : https://myautonomous.adb.eu-frankfurt-1.oraclecloudapps.com 
 The formal structure of the URL to database actions is:  
 
 `https://<URL to autnomous>/ords/<dbusername>/_sdw/?nav=worksheet`
 
 The URL to database actions, with SQL, ML and ORDS in this example will be:  
   
-`jsonws.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/_sdw/?nav=worksheet`
+`https://myautonomous.adb.eu-frankfurt-1.oraclecloudapps.com/ords/demosuer03/_sdw/?nav=worksheet`
 
 3 tables are needed for the labs:  
  - trip  the data collection used for Machine Learning
@@ -31,8 +31,15 @@ Logon and navigate to SQL:
 
 ![DB Actions](../images/dbactions.jpg)
 
-Download the script create_tables.sql and run it from dbactions, eithehr by copy/paste into 
+
+Download the script create_tables.sql and run it from dbactions, either by copy/paste into 
 sql area and run script, or run from the file    
   
 ![DB Actions](../images/dbactions2.jpg)
 
+
+## Upload training data for machine learning
+
+Locate the file kjoredataV2.xlsx on your cloned git repo
+
+Run the instructions from ![Instructions](dataload.md)
