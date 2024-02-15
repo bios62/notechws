@@ -37,7 +37,7 @@ In this lab we will demonstrate how you easily can add database updates from a t
 
 ![Autonomous ORDS security Architecture](images/ords-architecture.jpg)  
   
-  # Oracle OCI Next Generation Firewall
+  # Protect ORDS REST API with Oracle OCI Next Generation Firewall
 
 In interest of time, configuration of the Firewall, and building a complete OCI network with the NGFW is not a part of the lab.
 The architecture can easily be extended run Oracle ATP on a private IP only and filter all ORDS REST API through the NGFW.
