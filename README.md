@@ -1,6 +1,9 @@
-# NO TECH Workshop 
+# BMW EV Machine Learning Workshop 
 
-Material for Oracle Norway Tech Community Iot/ORDS/REST/ML workshop 
+This is a fun workshop where we use machine learning trained with 
+data collected from a BMW EV, to predict KWh consumption based on speed an
+temperature. We will integrate a Microcontroller with a sensor to a database over REST
+and present the prediction on tiny cool mobile app, using REST to the ML service
   
 Brought to you by:  
 Frode Pedersen, frode.pedersen@oracle.com  
