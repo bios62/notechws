@@ -13,7 +13,7 @@ Inge Os, inge.os@oracle.com
 
 The target of the workshop is to learn how you may integrate autonomous database with machine learning and edge devices in a secure way.
 
-The workshop bases the AI Predictions on data collected with a BMW i5 EV from Oslo to Spain, collecting speed, temperature, power consumption in KWH, altitude and location.
+The workshop bases the AI Predictions on data collected with a BMW i4 M50 EV from Oslo to Spain, collecting speed, temperature, power consumption in KWH, altitude and location.
 The collected data is the use to generate a ML based regression, for predicting power consumption based on speed and temperature.
 The real-time temperature and speed is collected via a microcontroller programmed with micro Python, feeding real-time data into Autonomous Database 
 via REST, the prediction is then visualized and presented to the user on a mobile device with APEX.
