@@ -6,7 +6,7 @@
 When creating APIs with ORDS there are 3 basic steps:
 - Create the module, which is a collection of APIs
 - Create a template, which is the name of the API
-- create  ahandler, one handler for each HTTP verb, GET, POST, PATCH, DELETE
+- create a handler, one handler for each HTTP verb, GET, POST, PATCH, DELETE
   
 By defalt the URI will be: /ords/dbschema/module/template
 
@@ -30,7 +30,7 @@ Click create module, enter name "wsapi", leave the rest, click create
   
 Module created.  
 
-Next step is to create the 3 POST REST APIs for updating tge logdata table or current_speed table.
+Next step is to create the 3 POST REST APIs for updating the logdata table or current_speed table.
 Firs API is tempkmh for inserting a new record into the logdata table with both temp and kmh from the payload.  
 
 In the workshop title, select create template
@@ -74,7 +74,7 @@ Well done, first API created, navigate back to "workshop"
   
 Creating the temp REST API with POST  
 The temp API updates the logdata with temp from the payload and the speed from the current_speed table.  
-Repeat the steps for creating the temp REST API with POST,but do not add MIMEs allowed.  
+Repeat the steps for creating the temp REST API with POST, but do not add MIMEs allowed.  
 
 
 ![ORDS Screen](../images/ords15.jpg)
@@ -98,7 +98,7 @@ The REST API temp is added.
 ![ORDS Screen](../images/ords19.jpg)
 
 Creating the kmh REST API with POST 
-the kmh API ipdates the current_speed table, not the logdata table  
+the kmh API updates the current_speed table, not the logdata table  
  Repeat the steps and add REST API KMH, click create template
 
 ![ORDS Screen](../images/ords20.jpg)  
@@ -148,7 +148,7 @@ Add MIMEs Allowed
 
 For PL/SQL type GET we need to define the result data that will be in the JSON response.
 We define a response value name "response" as a OUT parameter with the PL/SQL variable p_result as bind variable  
-Clict create parameter  
+Click create parameter  
 
 ![ORDS Screen](../images/ords34.jpg)
 
@@ -183,7 +183,7 @@ Add MIMEs Allowed
 
 The creation of tempkmh API complete.
 
-This completse the creation of the REST API.
+This completes the creation of the REST API.
 
 A simple test, add the URL to the last GET API in your browser:
 

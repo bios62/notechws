@@ -19,7 +19,7 @@ Unpack both boards. Try not to touch the 3x3 mm blank sensor - it will hurt its 
 
 ## Step 1 - Hardware
  
-The small cable and plugs is easy to damage so, first look at cable and identify the small blank metal pins on the plugs.  Locate the AHT20 text on the sensor-board and with the text oriented in the correct way - Carefully plug one end of the cable into the left white sockets - with the metal pins pointing down.  Then plug the other end into the white socket of the ESP32 controller.
+The small cable and plugs are easy to damage so, first look at cable and identify the small blank metal pins on the plugs.  Locate the AHT20 text on the sensor-board and with the text oriented in the correct way - Carefully plug one end of the cable into the left white sockets - with the metal pins pointing down.  Then plug the other end into the white socket of the ESP32 controller.
 
 The two plugs on the AHT20 sensor is actually identical, and can be used to daisy chain multiple sensor.  To reduce failure rate of the cable sockets, try to not remove cable from ESP32.  It is better to unplug at the AHT20 because you have two sockets - one spare if it gets damaged.  
 
@@ -81,7 +81,7 @@ You can now get a little bit experience with the ESP32 Circuitpython by changing
 
 You can also copy the lines with RGB and the following delay one or more times and change the colors and delays - to create more colorful blink sequences.  
 
-The other blink directories also contains versions of code.py with different blink sequences.  
+The other blink directories also contain versions of code.py with different blink sequences.  
 
 ## Step 5 - Configure and start the micro_python_example.py from the sensor directory
 

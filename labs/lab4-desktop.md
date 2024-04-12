@@ -10,7 +10,7 @@ The Python code demonstrates how to use the ORDS REST API for reading and updati
 
 Completed lab 1  
 For the command-line version, grab an environment with Python 3, for Windows like Anaconda or through Windows Linux Subsystem for Linux.
-To run the commandline version you need requests and urllib3:
+To run the command-line version you need requests and urllib3:
 
 'pip install requests
 'pip install urllib3

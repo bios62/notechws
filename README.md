@@ -54,7 +54,7 @@ For details please refer to: [OCI Network Firewall](https://docs.oracle.com/en/s
 Machine Learning in Oracle Database supports data exploration, preparation, and machine learning (ML) modeling at scale using SQL, R, Python, REST, automated machine learning (AutoML), and no-code interfaces.  
 - More than 30 high performance in-database algorithms producing models for immediate use in applications. 
 - Keeping data in the database, no need to move or copy data. 
-With Oracle ML organizations can simplify their overall architecture and maintain data synchronization and security. It enables data scientists and other data professionals to build models quickly by simplifying and automating key elements of the machine learning lifecycle. Oracle ML is inlcued in the license of any Oracle Database Edition.
+With Oracle ML organizations can simplify their overall architecture and maintain data synchronization and security. It enables data scientists and other data professionals to build models quickly by simplifying and automating key elements of the machine learning lifecycle. Oracle ML is included in the license of any Oracle Database Edition.
   
 
 # Workshop goal
@@ -64,15 +64,15 @@ and based on the sensor data applies Machine Learning to create a prediction.
   
 The prediction will be visualized in APEX
   
-As Sensor we use an Arduino device with micro python that posts sensordata via REST to an autonomous database.
+As Sensor we use an Arduino device with micro python that posts sensor-data via REST to an autonomous database.
   
-The sensor collects data and ingest into a logtable, vs. the APEX application extract the latest log data
+The sensor collects data and ingest into a log-table, vs. the APEX application extract the latest log data
 and display the predictions.
   
 As sample data we will use a set of data collected from a BMW EV from a trip from Oslo to Spain,
 that is uploaded into the Autonomous DB, and the appl Oracle DB built in machine learning, ML.
   
-For the lab you may either use a python script where the sensordata is manually entered or use the micro python code from the device.
+For the lab you may either use a python script where the sensor-data is manually entered or use the micro python code from the device.
   
 ### Workshop flow
 
@@ -93,7 +93,7 @@ In this lab you will create the different AI ML models, and test/verify your mod
 
 ##  Workshop part 3
 
-Add REST services, for adding current speed and current temp, as basis for predictions    
+Add REST services, for adding current_speed and current_temp, as basis for predictions    
 
 The following API will be added:  
 
@@ -110,9 +110,9 @@ GET /wsapi/predict?kmh=xxx&temp=xxx
 ## Workshop part 4
 
 Python Lab  
-In this lab a Arduino based microcontroller for a temp sensor will be used to report current temp to the logdata table  
-The Arduino does not have a speed sensor, and the REST API used is /wsapi/temp that supplements the logdata record with the most recent value from the current_speed table.  
-During the lab, current_speed may be changed to generate different values in the logdata table with the simulator
+In this lab a Arduino based microcontroller for a temp sensor will be used to report current_temp to the log-data table  
+The Arduino does not have a speed sensor, and the REST API used is /wsapi/temp that supplements the log-data record with the most recent value from the current_speed table.  
+During the lab, current_speed may be changed to generate different values in the log-data table with the simulator
 
 
 `python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --speed 75`    
@@ -121,7 +121,7 @@ or curl:
 
 `curl -X-POST -d '{"current_speed":75}' -H '{"Content Type":"application/json"}' https:://<your ATP URL>/ords/<your username>/wsapi/speed`
 
-or run the python script [](files/)getprediction.pyton
+or run the python script [](files/getprediction.pyton)
 
   
 As an alternative to usage of an Arduino, a python script is supplied to interactively update the logtable with the /wsapi/tempkmh API  
@@ -137,7 +137,7 @@ As an alternative to usage of an Arduino, a python script is supplied to interac
 
 ## Workshop part 5
 
-In this lab you will logon to your apex envrionment and upload an APEX application that displays the predicted power consumption at the current temp/speed.
+In this lab you will logon to your apex environment and upload an APEX application that displays the predicted power consumption at the current temp/speed.
   
 You have a predefined APEX workspace, with the same username/password as your database actions username/password
 
@@ -145,7 +145,7 @@ You have a predefined APEX workspace, with the same username/password as your da
 
 ## Workshop part 6
 
-Simulate or add real sensordata
+Simulate or add real sensor-data
 Run APEX app and visualize prediction  
 
 ## Links and supporting documentation

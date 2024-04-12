@@ -2,7 +2,7 @@
 
 ## Purpose of lab
 
-The purprose of this lab is to build and enable ORDS API.
+The purpose of this lab is to build and enable ORDS API.
 The lab will create the following API:
 
 `POST /wsapi/tempkmh`    insert into logdata, payload: `'{kmh:<current speed>,"temp":<current temp>}'`  

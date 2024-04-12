@@ -2,7 +2,7 @@
 
 ## Purpose of lab
 
-The purpose of this lab is to import and run the Oracle APEX application for viewing the trip- and logdata.
+The purpose of this lab is to import and run the Oracle APEX application for viewing the trip- and log-data.
 
 ## Prerequsite
 
@@ -10,7 +10,7 @@ Completed lab 4
 
 ## APEX logon and URL  
 
-The URL to the APEX Worksapace is:  
+The URL to the APEX Workspace is:  
 
 `https://<your ATP instance>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/r/apex/workspace-sign-in/oracle-apex-sign-in?session=106975469353731`
 

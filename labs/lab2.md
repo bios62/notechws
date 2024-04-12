@@ -2,13 +2,13 @@
 
 ## Purpose of the lab
 
-The purpose of this lab is to  build machine learning models to predict consumption at different speeds and temperatures, based on the TRIP table.
+The purpose of this lab is to build machine learning models to predict consumption at different speeds and temperatures, based on the TRIP table.
 
 
 
 ## Prerequisites
 
-Complete lab 1 and ensure that  `TRIP` table is loaded into the schema.
+Complete lab 1 and ensure that `TRIP` table is loaded into the schema.
 
 
 ## Database Actions SQL instructions for the first Machine Learning experiment.
@@ -26,14 +26,14 @@ and mm is null -- ignore drives with rain/snow
 and hoh is null -- ignore the steepest driving up and down mountains
 );
 
--- Do a select to confirm that it returns data :
+-- Do a select to confirm that it returns data:
 
 select * from mlinput;
 ```
 
 ## Step 2
 
-Next task is to configure this Machine Learning experiment,  by creating a settings table :
+Next task is to configure this Machine Learning experiment, by creating a settings table :
 
 ```
 drop table mlsettingsSVM   -- if exists;
@@ -54,7 +54,7 @@ dbms_data_mining.drop_model(model_name => 'SVM1');
 end;
 /
 
---The new Model :
+--The new Model:
 
 begin
 dbms_data_mining.create_model(
@@ -69,7 +69,7 @@ end;
 ```  
 
 ## Step 4
-We can then do some predictions - some examples :
+We can then do some predictions - some examples:
   
   ```
 SELECT prediction (SVM1 using 100 AS kmh,20 AS CELSIUS) FROM DUAL;
@@ -79,8 +79,8 @@ SELECT prediction (SVM1 using 130 AS kmh,20 AS CELSIUS) FROM DUAL;
 SELECT prediction (SVM1 using 100 AS kmh,10 AS CELSIUS) FROM DUAL;
 ```  
 
-Does it look ok ?
-If not, what is wrong ?
+Does it look ok?
+If not, what is wrong?
 
 ## Step 5
 
@@ -103,7 +103,7 @@ and hoh is null
 );
 ```  
 
-It looks like we have not included the temperature in the source data  - let's fix it:
+It looks like we have not included the temperature in the source data - let's fix it:
   
 ```
 create or replace view mlinput (ID,KMH,KWP100,CELSIUS)
@@ -123,7 +123,7 @@ Let's go to the next step.
 
 ## Step 6
 
-We actually need to train the model - once more, now including the celsius column/attribute/feature.
+We actually need to train the model - once more, now including the Celsius column/attribute/feature.
 
 All you have to do is repeat step 3.
 
@@ -319,7 +319,7 @@ END;
   
 A more flexible way could be to have a table with the current selected model - but we will not do that today.
   
-Let's query the old view - with the new GLM model : 
+Let's query the old view - with the new GLM model: 
   
 
 ```
@@ -377,7 +377,7 @@ select 'GLM',sum(abs(predict_consumption_flex(kmh,celsius,'GLM1')-kwp100))
 from trip;
 ```  
   
-This one excludes short trips, rain/snow and mountain trips  ?
+This one excludes short trips, rain/snow and mountain trips?
   
 ```
 select 'SVM',sum(abs(predict_consumption_flex(kmh,celsius,'SVM1')-kwp100)) 
