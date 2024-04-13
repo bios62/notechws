@@ -31,13 +31,13 @@ Click create module, enter name "wsapi", leave the rest, click create
 Module created.  
 
 Next step is to create the 3 POST REST APIs for updating the logdata table or current_speed table.
-Firs API is tempkmh for inserting a new record into the logdata table with both temp and kmh from the payload.  
+First API is **tempkmh** for inserting a new record into the logdata table with both temp and kmh from the payload.  
 
 In the workshop title, select create template
 
 ![ORDS Screen](../images/ords5.jpg)  
   
-Creating the tempkmh REST API with POST  
+Creating the **tempkmh** REST API with POST  
 Click on "create template"  
 Enter in the URI Template field "tempkmh", click create  
 
@@ -74,9 +74,9 @@ Well done, first API created, navigate back to "workshop"
   
 ![ORDS Screen 14](../images/ords14.jpg)
   
-Creating the temp REST API with POST  
-The temp API updates the logdata with temp from the payload and the speed from the current_speed table.  
-Repeat the steps for creating the temp REST API with POST, but ** do not add MIMEs allowed**.  
+Creating the **temp** REST API with POST  
+The **temp** API updates the logdata with **temp** from the payload and the speed from the current_speed table.  
+Repeat the steps for creating the **temp** REST API with POST, but ** do not add MIMEs allowed**.  
 
 
 ![ORDS Screen](../images/ords15.jpg)
@@ -95,21 +95,21 @@ The micropython implementation does not support setting header variables like "C
 to discard lack of MIME type. Skip setting of MIMEs allowed for this API
 
 
-The REST API temp is added. 
+The REST API **temp** is added. 
 
 ![ORDS Screen](../images/ords19.jpg)
 
-Creating the kmh REST API with POST 
-the kmh API updates the current_speed table, not the logdata table  
- Repeat the steps and add REST API KMH, click create template
+Creating the **kmh** REST API with POST 
+The **kmh** API updates the current_speed table, not the logdata table  
+Repeat the steps and add REST API KMH, click create template
 
 ![ORDS Screen](../images/ords20.jpg)  
 
-Create template kmh  
+Create template **kmh**  
 
 ![ORDS Screen](../images/ords21.jpg)
 
-Create the POST handler for kmh
+Create the POST handler for **kmh**
 
 ![ORDS Screen](../images/ords22.jpg)
 
@@ -120,7 +120,7 @@ Add the following PL/SQL in the POST handler:
 
 ![ORDS Screen](../images/ords24.jpg)
 
-The REST API kmh is complete  
+The REST API **kmh** is complete  
 
 ![ORDS Screen](../images/ords25.jpg)
 
@@ -166,9 +166,9 @@ Access method: Output
 ![ORDS Screen](../images/ords35.jpg)
 
 
-As the last API lets create the tempkmh GET api fro retrieving the 25 newest records from the logdata table.
+As the last API lets create the **tempkmh** GET api fro retrieving the 25 newest records from the logdata table.
 Note that the API URL is the same as the POST above, but the handler is a GET handler, in reality a new API.
-Navigate back to the tempkmh template.  
+Navigate back to the **tempkmh** template.  
 
 Create GET handler for the **tempkmh** template. navigate back to workshop module and select the **tempkmh** template  
 Select Handlers from the 3 dot right menu, and then select Create Handler  
@@ -186,7 +186,7 @@ Add MIMEs Allowed
 
 ![ORDS Screen](../images/ords42.jpg)
 
-The creation of tempkmh API complete.
+The creation of **tempkmh** API complete.
 
 This completes the creation of the REST API.
 
