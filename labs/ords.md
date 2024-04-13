@@ -39,21 +39,23 @@ In the workshop title, select create template
   
 Creating the tempkmh REST API with POST  
 Click on "create template"  
-Enter Template name "tempkmh", click create  
+Enter in the URI Template field "tempkmh", click create  
 
 ![ORDS Screen](../images/ords6.jpg)
   
 Template created, note the Create Handler
 Click create handler 
 
-![ORDS Screen](../images/ords7.jpg)
+![ORDS Screen](../images/ords7.jpg)  
+  
+
+![ORDS Screen](../images/ords8.jpg)  
 
 Select POST and add PL/SQL statement: 
 
 `begin insert into logdata (temp,kmh) values(:temp,:kmh); commit; end;`  
 
-![ORDS Screen](../images/ords8.jpg)
-
+  
 ![ORDS Screen](../images/ords9.jpg)
 
 Navigate to MIMEs allowed and select application/json and click add  
@@ -74,7 +76,7 @@ Well done, first API created, navigate back to "workshop"
   
 Creating the temp REST API with POST  
 The temp API updates the logdata with temp from the payload and the speed from the current_speed table.  
-Repeat the steps for creating the temp REST API with POST, but do not add MIMEs allowed.  
+Repeat the steps for creating the temp REST API with POST, but ** do not add MIMEs allowed**.  
 
 
 ![ORDS Screen](../images/ords15.jpg)
@@ -148,16 +150,18 @@ Add MIMEs Allowed
 
 For PL/SQL type GET we need to define the result data that will be in the JSON response.
 We define a response value name "response" as a OUT parameter with the PL/SQL variable p_result as bind variable  
-Click create parameter  
-
-![ORDS Screen](../images/ords34.jpg)
-
+Scroll down and click create parameter  
 The GET REST API needs to define the return value from the PL/SQL function as a parameter  
 Create the parameter:  
 
 ![ORDS Screen](../images/ords34.jpg)
 
-And the REST API GET predict is complete
+And the REST API GET predict is complete  
+Parameter name: result  
+Bind Variable Name: p_result  
+Source Type: Response  
+Parameter Type: STRING  (Default)
+Access method: Output  
 
 ![ORDS Screen](../images/ords35.jpg)
 
@@ -166,7 +170,8 @@ As the last API lets create the tempkmh GET api fro retrieving the 25 newest rec
 Note that the API URL is the same as the POST above, but the handler is a GET handler, in reality a new API.
 Navigate back to the tempkmh template.  
 
-Create template tempkmh GET API 
+Create GET handler for the **tempkmh** template. navigate back to workshop module and select the **tempkmh** template  
+Select Handlers from the 3 dot right menu, and then select Create Handler  
   
 ![ORDS Screen](../images/ords40.jpg)
 

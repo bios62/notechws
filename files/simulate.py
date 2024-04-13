@@ -123,6 +123,11 @@ def pretty_print_POST(req):
 ########################################################################
 # ords_api
 # Function to call GET or POST ORDS API
+#
+# verify_args ensures that at least kmh, temp or speed is set
+#
+# If neither nor temp is set, speed is set, and a GET will be processed
+# if any of temp or kmh is set a POST will be performed
 ########################################################################
 def ords_api(args, dbg=0):
     #
@@ -152,7 +157,7 @@ def ords_api(args, dbg=0):
     #
     # Process GET or POST
     # if there are no payload, assume GET  (Query parameters in URL)
-    #
+    # 
     api_status_code = -1
     try:
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -172,7 +177,7 @@ def ords_api(args, dbg=0):
             "Executing API "
             + apiurl
             + " "
-            + op
+            + ('GET' if len(payload) == 0 else 'POST')
             + " status code: "
             + str(api_status_code)
         )
@@ -221,7 +226,7 @@ def main():
             exit(1)
     #
     #  Execute REST API
-    #
+    # 
     response = ords_api(args, 1)
     if response == False:
         print("Update of autonomous failes, review error stack")
@@ -243,7 +248,7 @@ def main():
             except Exception as e:
                 print(response.content)
         print()
-        print("Autonomous successfully updated")
+        print("Autonomous database ORDS REST operation is successfull")
     # terminate
     #
     exit(0)

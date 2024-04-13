@@ -122,9 +122,9 @@ def main():
     restartCnt = 0
     time.sleep(10.0)
     while True:
-        cleanup_memory()
+        current_memory=cleanup_memory()
 
-        if gc.mem_free() < 2006000:
+        if current_memory < 2006000:
             print(f"\nMemory restart -Green->Red")
             for x in range(255):
                 pixel.fill((x, 255 - x, 0))

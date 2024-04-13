@@ -20,7 +20,7 @@ The formal structure of the URL to database actions is:
 
 The URL to database actions, with SQL, ML and ORDS in this example will be:  
   
-`https://myautonomous.adb.eu-frankfurt-1.oraclecloudapps.com/ords/demosuer03/_sdw/?nav=worksheet`
+`https://myautonomous.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/_sdw/?nav=worksheet`
 
 3 tables are needed for the labs:  
  - trip             the data collection used for Machine Learning
@@ -32,8 +32,10 @@ Logon and navigate to SQL:
 ![DB Actions](../images/dbactions.jpg)
 
 
-Download the script create_tables.sql and run it from dbactions, either by copy/paste into 
+Download the script [create_tables.sql](files/create_tables.sql) and run it from dbactions, either by copy/paste into 
 sql area and run script, or run from the file    
+  
+** Note: Press F5 or select the correct button "run script" **  
   
 ![DB Actions](../images/dbactions2.jpg)
 

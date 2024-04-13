@@ -36,7 +36,8 @@ select * from mlinput;
 Next task is to configure this Machine Learning experiment, by creating a settings table :
 
 ```
-drop table mlsettingsSVM   -- if exists;
+-- drop if exists
+drop table mlsettingsSVM;   
 create table mlsettingsSVM (setting_name varchar2(30), setting_value varchar2(30));
 ```
 
@@ -161,7 +162,7 @@ END;
 select predict_consumption(100,20) from dual;
 ```  
 
-## Step 7
+## Step 8
 
 It would be useful to have a view with consumptions at different speeds and temperatures:
   
@@ -208,14 +209,15 @@ Lets test it:
 And let's save the result in a table:
   
 ```
-drop table consumptionSVM; -- if exists
+-- if exists
+drop table consumptionSVM; 
   
 create table consumptionSVM as select * from consumption;
 
 select * from consumptionSVM order by celsius;
 ```  
   
-## Step 7
+## Step 9
 
 Another useful model is the General Linear Model (GLM).
 To try this model, we have to repeat the tasks from Step 2 - with some small changes. Let's try the following:
@@ -275,7 +277,7 @@ SELECT prediction (SVM1 using 100 AS kmh,10 AS CELSIUS) FROM DUAL;
 ```  
 
 
-## Step 7
+## Step 10
 
 Maybe we should switch to using SVM1.  Here is one simple way to switch between the models:
   
@@ -342,7 +344,7 @@ drop table consumptionGLM -- if already existing;
 create table consumptionGLM as select * from consumption;
 ```  
   
-## Step 8
+## Step 11
 
 In order to make sure that we are on the right track - let's do a few final analysis, by comparing predicted vs. actual consumption:
   
