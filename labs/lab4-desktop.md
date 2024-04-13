@@ -25,12 +25,17 @@ One simple tool is Code with Mu
 The command-line Python script inserts into either the logdata or current_speed tables, or lists the last 25 records from logdata  
 Usage:  
 Get the 25 latest records from logdata  
-`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp` 
+`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp`
+  
 Create new logdata record with temp and current speed  as kmh  
-`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --temp 23  --kmh 74` 
+`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --temp 23  --kmh 74`
+  
 Create new logdata record withe temp and speed from command line  
-`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --temp 23` 
+`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --temp 23`
+  
 Create new record in the current_speed table as kmh  
-`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --kmh 75` 
+`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --kmh 75`
+  
 List latest 25 records from the logdata records  
-`python simulate.py --url https://<myadb url>/ords/user25/wsapi/tempkmh`  
+`python simulate.py --url https://<myadb url>/ords/user25/wsapi/tempkmh`
+  
