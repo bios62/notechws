@@ -26,9 +26,11 @@ The command-line Python script inserts into either the logdata or current_speed 
 Usage:  
 Get the 25 latest records from logdata  
 `python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp` 
-Create new logdata record with temp and speed  
+Create new logdata record with temp and current speed  as kmh  
 `python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --temp 23  --kmh 74` 
-Create new logdata record, but apply latest record in current_speed as speed  
+Create new logdata record withe temp and speed from command line  
 `python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --temp 23` 
-Create new record in the current_speed table  
-`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --speed 75` 
+Create new record in the current_speed table as kmh  
+`python simulate.py --url https://<myadb url>/ords/user25/wsapi/temp --kmh 75` 
+List latest 25 records from the logdata records  
+`python simulate.py --url https://<myadb url>/ords/user25/wsapi/tempkmh`  
