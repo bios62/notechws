@@ -1,5 +1,9 @@
 # Dataload, load trainingdata from Excel with Database actions  
 
+There are two wasys of loading data into the trip table:  
+- WIth the dataloader from excel
+- By SQL from preseeded table. Use this option in case you won't spend to much time of the excel part of the lab
+
 Navigate to Database Actions and click on data load
 
 ![DataLoad d11](../images/dl1.jpg)
@@ -27,6 +31,23 @@ Run the upload
 Upload completed without errors, verify number of rows, 82 rows should be loaded into trip
 
 ![DataLoad d17](../images/dl7.jpg)
+
+### LOad from preseeded table
+
+Execute the follwoing commands from SQL Developer if the trip table exists:   
+```
+truncate table trip;
+insert into trip (select * from workshop_trip);
+commit;
+```
+  
+If the trip table do not exists, just use CTAS:  
+
+```
+create table trip as select * from workshop_trip;
+```
+
+
 
 
 
