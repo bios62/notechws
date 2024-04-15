@@ -32,9 +32,9 @@ Upload completed without errors, verify number of rows, 82 rows should be loaded
 
 ![DataLoad d17](../images/dl7.jpg)
 
-### LOad from preseeded table
+### Load from preseeded table
 
-Execute the follwoing commands from SQL Developer if the trip table exists:   
+Execute the following commands from SQL Developer if the trip table exists:   
 ```
 truncate table trip;
 insert into trip (select * from workshop_trip);
