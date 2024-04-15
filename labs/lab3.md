@@ -8,7 +8,7 @@ The lab will create the following API:
 `POST /wsapi/tempkmh`    insert into logdata, payload: `'{kmh:<current speed>,"temp":<current temp>}'`  
 `POST /wsapi/temp`    insert into logdata, payload: `'{"temp":<current temp>}'`, the API adds latest value from current_speed as default value for kmh  
 `POST /wsapi/kmh`  insert into current_speed, payload: `'{kmh:<current speed>}'` insert new defalt vale for speed, to be consumed by /wsapi/temp  
-`GET /wsapi/tempkm` fetches 25 latest records in the logdata table  
+`GET /wsapi/tempkmh` fetches 25 latest records in the logdata table  
 
 ## Prerequsite
 
