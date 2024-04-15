@@ -18,10 +18,10 @@ import microcontroller
 #
 # Globals
 #
-wifi_networks=["penelope":["wifinamename":"penelope2021","ssid":"penelope2004"],"network2":["wifinamename":"name","ssid":"ssid"]]
+wifi_networks={"penelope":{"wifinamename":"penelope2021","ssid":"penelope2004"},"network2":{"wifinamename":"name","ssid":"ssid"}}
 
 # JSON_POST_URL = https://hikomo1xnp7z6id-jsonws.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/wsapi/temp
-JSON_POST_URL = https://wmddqsjvrtzzsph-adw.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/sensorapi/
+JSON_POST_URL = 'https://wmddqsjvrtzzsph-adw.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/sensorapi/'
 # JSON_POST_URL = https://wmddqsjvrtzzsph-adw.adb.eu-frankfurt-1.oraclecloudapps.com/ords/adminx/sensorapi/
 
 debug_level=0
@@ -159,7 +159,7 @@ def main():
         time.sleep(2.0)
 
         print(f"Connecting to WiFi")
-        connectWiFi=connect_to_wifi():
+        connectWiFi=connect_to_wifi()
         pixel.fill((255, 255, 0))
         time.sleep(2.0)
         mc = 22
@@ -167,7 +167,8 @@ def main():
             i2c = board.STEMMA_I2C()
             aht20 = adafruit_ahtx0.AHTx0(i2c)
             data = [aht20.temperature, aht20.relative_humidity]
-            print("\nTemperature: %0.1f C" % aht20.temperature)
+            print("\nTemperature: %0.1f ",end=' ')
+            print(data)
             mc = int(aht20.temperature * 1000)
             # mc = aht20.temperature
             print("\nTemperature mc: %0.1f C" % mc)

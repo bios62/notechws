@@ -23,7 +23,7 @@ The small cable and plugs are easy to damage so, first look at cable and identif
 
 The two plugs on the AHT20 sensor is actually identical, and can be used to daisy chain multiple sensor.  To reduce failure rate of the cable sockets, try to not remove cable from ESP32.  It is better to unplug at the AHT20 because you have two sockets - one spare if it gets damaged.  
 
-## Step 2 - Download Circuitpython and prepare microcontroller
+## Step 2 - Download Circuitpython, Circuitpython IDE and prepare microcontroller
 
 Download Adafruit Circuitpython library pack version 8.x from:  
 
@@ -34,6 +34,7 @@ Download Circuitpython 8 for Adafruit QT PYESP32-S2, the download.uf2 file, from
 [https://circuitpython.org/board/adafruit_qtpy_esp32s2/](https://circuitpython.org/board/adafruit_qtpy_esp32s2/)
 
 
+The recommended IDE for Circuity Python development, **mu** is found [here](https://codewith.mu/)  
 
 ### Download ESP32 software bundle from GitHub???????  
 
