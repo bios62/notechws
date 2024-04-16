@@ -18,12 +18,15 @@ import microcontroller
 #
 # Globals
 #
-wifi_networks={"penelope":{"wifinamename":"penelope2021","ssid":"penelope2004"},"network2":{"wifinamename":"name","ssid":"ssid"}}
+wifi_networks={"penelope":{"wifinamename":"penelope2021","ssid":"penelope2004"},"network2":{"wifinamename":"S8sl","ssid":"mercedes450sl"}}
+pixcel = None
+wifi_found=False
 
 # JSON_POST_URL = https://hikomo1xnp7z6id-jsonws.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/wsapi/temp
 JSON_POST_URL = 'https://wmddqsjvrtzzsph-adw.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/sensorapi/'
 # JSON_POST_URL = https://wmddqsjvrtzzsph-adw.adb.eu-frankfurt-1.oraclecloudapps.com/ords/adminx/sensorapi/
 
+VERSION="160424J"
 debug_level=0
 MEMORY_THRESHOLD=2006000
 MAX_ITERATIONS_BEFORE_RESTART=10
@@ -43,7 +46,7 @@ def cleanup_memory(text=None):
 
 
 def post_temp(microcelsius):
- 
+    global pixcel
     myobj = {"objectname": "PYTHON", "sensorname": "TempMC", "sensorvalue": microcelsius}
     # myobj = {"temp": mc}
     print(myobj)
@@ -82,38 +85,54 @@ def post_temp(microcelsius):
     return -1
 
 def connect_to_wifi():
+    
+    global pixcel
+    global wifi_found
+    
     wifi_found=False
-    for wifinet in wifi_networks:
+    for wifi_net in wifi_networks:
+        print(wifi_net)
+        print(f"\n trying to connect to Wi Fi network  {wifi_networks[wifi_net]['wifinamename']} {wifi_networks[wifi_net]['ssid']}")
         try:
-            print(f"\n trying to connec to Wi Fi network  {wifi_networks[wifinet]['wifinamename']} {wifi_networks[wifinet]['ssid']})
-            wifi.radio.connect(wifi_networks[wifinet]['wifinamename'], wifi_networks[wifinet]['ssid'])
+            wifi.radio.connect(wifi_networks[wifi_net]['wifinamename'], wifi_networks[wifi_net]['ssid'])
             connectWiFi = True
-            print(f"\nConnected to :"+wifinet)
+            print(f"\nConnected to :"+wifi_net)
             print(connectWiFi)
             print(f"My IP address: {wifi.radio.ipv4_address}")
             pixel.fill((255, 0, 255))
             time.sleep(2.0)
             wifi_found=True
-        except:
+            print(f"successfully connected to Wifi {wifi_net}")
+            break
+        except Exception as e:
             print("\nConnect to network - failed")
-            print("Available WiFi networks:")
+            print(e)
+            time.sleep(20.0)
+            
             cleanup_memory()
     if not wifi_found:
+            print("Available WiFi networks:")
             printWifi()
+        
     return wifi_found
 
 
-def printWifi():
-    for network in wifi.radio.start_scanning_networks():
-        print(
-            "\t%s\t\tRSSI: %d\tChannel: %d"
-            % (str(network.ssid, "utf-8"), network.rssi, network.channel)
-        )
-    wifi.radio.stop_scanning_networks()
 
-
+def set_color(color,sleep_time=0):
+    global pixcel
+    #
+    # initialize pixcel
+    #
+    if pixel == None:
+        pixel = neopixel.NeoPixel(board.NEOPIXEL, 1)
+    if color == RED:
+        
+    
 def main():
-    print("\nstart:version 240218J")
+    
+    global pixcel
+    
+    print(f"\nStart: version {VERSION}")
     pixel = neopixel.NeoPixel(board.NEOPIXEL, 1)
     cleanup_memory()
     hostname = 'QTPY' + str(int.from_bytes(microcontroller.cpu.uid, 'little') >> 29)
@@ -133,6 +152,8 @@ def main():
         current_memory=cleanup_memory()
         #
         # If Current memory is below memor Threashold, continue
+        # Otherwise reboot
+        #
         if current_memory < MEMORY_THRESHOLD:
             print(f"\nMemory restart -Green->Red")
             for x in range(255):
@@ -142,7 +163,9 @@ def main():
             # Restart device
             #
             supervisor.reload()
-
+        #
+        #  If max number of iterations is reached, reboot
+        #
         restartCnt = restartCnt + 1
         print(f"restartCnt: {restartCnt} ")
         if restartCnt > MAX_ITERATIONS_BEFORE_RESTART:
@@ -151,19 +174,25 @@ def main():
             pixel.fill((255, 255, 255))
             time.sleep(20.0)
             supervisor.reload()
+        #
+        # No reboot continue
+        #
         print("\nLoop Start - white 2 sec")
         pixel.fill((255, 255, 255))
         time.sleep(2.0)
-
-
         pixel.fill((0, 255, 255))
         time.sleep(2.0)
-
+        #
+        # Connect to Wifi
+        #
         print(f"Connecting to WiFi")
         connectWiFi=connect_to_wifi()
         pixel.fill((255, 255, 0))
         time.sleep(2.0)
         mc = 22
+        #
+        #  If there is no WiFi just report tem locally to serial monitor
+        #
         try:
             i2c = board.STEMMA_I2C()
             aht20 = adafruit_ahtx0.AHTx0(i2c)
