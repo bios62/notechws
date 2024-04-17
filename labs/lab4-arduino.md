@@ -94,27 +94,16 @@ Program will then attempt to post temperature to the database.
 
 Before running you must change the wifi parameters and the uri to your database schema.  
 
-Change this code to point to your ATP ORDS REST API:  
+Change this code to point to your ATP ORDS REST API, and allocated your WiFi connection  
+  
 ```
-
-# Add the correct ATP ORDS REST URL
-# Example format https://hirokixxx-mydb.adb.eu-frankfurt-1.oraclecloudapps.com/ords/demouser5/wsapi/temp
-
-JSON_POST_URL = "https://<your ATP URL>/ords/<username>/wsapi/temp"
-
-```
-
-Change the WIFI connect parameters:  
- ```
- try:
-	# change wifi SSID and PWD in next line
-        ssid="MYSSID"
-        pwd="MYPWD"
-        wifi.radio.connect(ssid,pwd)
-        connectWiFi = True
-    except:
-        print("\nConnect to network - failed")
-```
+wifi_networks = {
+    "mobile": {"wifinamename": "mobilenet", "ssid": "secret1"},
+    "home": {"wifinamename": "myhomenet", "ssid": "secret2"},
+}
+REST_POST_URL = "https://hikomo1xnp7z6id-jsonws.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user20/wsapi/temp"
+```  
+  
 Save the file to the ESP32, and you should see debug text in the lower window - while the LED will change colors while the program first tries to connect wifi, reads sensor, and then posts to the database.  
 
 You can also use your breath to try to warm the sensor and see if you get a temperature change.  

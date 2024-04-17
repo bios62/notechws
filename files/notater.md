@@ -1,16 +1,7 @@
-# Workshop setup for workshop 15.04  
+# Workshop setup for workshop 17.04  
   
 Usernames are:  
-user01  
-user02  
-user03  
-user04  
-user05  
-user06  
-user07  
-user08  
-user09  
-user10  
+user10 - user 19 
 
 The URL to SQL Developer is:   
   
@@ -24,3 +15,5 @@ https://hikomo1xnp7z6id-jsonws.adb.eu-frankfurt-1.oraclecloudapps.com/ords/r/ape
 
 Workspace and usernanme are the same as your assigned username from above.  
 Note Apex usrname are case sensitive in uppercase  
+
+Common password for the workshop across all features is: Bbreg170424####

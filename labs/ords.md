@@ -196,6 +196,6 @@ A simple test, add the URL to the last GET API in your browser:
 
 and observe the result.
 
-The [basch script](../files/verify_ords.bash) runs thorugh all the API with curl  
+The [bash script](../files/verify_ords.bash) runs thorugh all the API with curl  
 
 

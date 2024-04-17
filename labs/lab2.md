@@ -223,7 +223,8 @@ Another useful model is the General Linear Model (GLM).
 To try this model, we have to repeat the tasks from Step 2 - with some small changes. Let's try the following:
   
 ```
-drop table mlsettingsGLM; -- ignore if table not exists
+-- ignore error message, if table not exists
+drop table mlsettingsGLM; 
 
 create table mlsettingsGLM (setting_name varchar2(30), setting_value varchar2(30));
 
