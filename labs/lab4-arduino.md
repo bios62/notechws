@@ -33,6 +33,11 @@ Download Circuitpython 8 for Adafruit QT PYESP32-S2, the download.uf2 file, from
 
 [https://circuitpython.org/board/adafruit_qtpy_esp32s2/](https://circuitpython.org/board/adafruit_qtpy_esp32s2/)
 
+Documentation of the Circiut Python API:
+
+[](https://circuitpython.org/libraries)
+[](https://docs.circuitpython.org/projects/requests/en/latest/api.html)
+
 
 The recommended IDE for Circuity Python development, **mu** is found [here](https://codewith.mu/)  
 
