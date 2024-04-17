@@ -136,8 +136,8 @@ create table consumptionSVM as select * from consumption;
 select * from consumptionSVM order by celsius;
 
 -- Step 9
-
-drop table mlsettingsGLM; -- ignore if table not exists
+ -- ignore if table not exists
+drop table mlsettingsGLM;
 
 create table mlsettingsGLM (setting_name varchar2(30), setting_value varchar2(30));
 
