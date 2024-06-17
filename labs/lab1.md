@@ -16,9 +16,11 @@ Assume your userid is user25 and your password is password25.
 With the URL to Autonomous like : https://myautonomous.adb.eu-frankfurt-1.oraclecloudapps.com 
 The formal structure of the URL to database actions is:  
 
-`https://<URL to autnomous>/ords/<dbusername>/_sdw/?nav=worksheet`
+`https://<URL to autonomous>/ords`
 
-The URL to database actions, with SQL, ML and ORDS in this example will be:  
+Select SQL Developer WEB  
+
+The direct URL to database actions, with SQL, ML and ORDS in this example will be:  
   
 `https://myautonomous.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/_sdw/?nav=worksheet`
 
@@ -34,8 +36,8 @@ Logon and navigate to SQL:
 
 Download and run the scripts  
  [create_tables.sql](../files/create_table.sql)  
- [logdata_t.sql](..files/logdata_t.sql)  
- [positions.sql](..files/positions.sql)
+ [logdata_t.sql](../files/logdata_t.sql)  
+ [positions.sql](../files/positions.sql)
 
  and run it from dbactions, either by copy/paste into sql area and run script, or run from the file   
 
