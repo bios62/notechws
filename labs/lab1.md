@@ -32,8 +32,17 @@ Logon and navigate to SQL:
 ![DB Actions](../images/dbactions.jpg)
 
 
-Download the script [create_tables.sql](files/create_table.sql) and run it from dbactions, either by copy/paste into 
-sql area and run script, or run from the file    
+Download and run the scripts  
+ [create_tables.sql](../files/create_table.sql)  
+ [logdata_t.sql](..files/logdata_t.sql)  
+ [positions.sql](..files/positions.sql)
+
+ and run it from dbactions, either by copy/paste into sql area and run script, or run from the file   
+
+ [runsql.png](../images/runsql.png)    
+
+  
+
   
 ** Note: Press F5 or select the correct button "run script" **  
   

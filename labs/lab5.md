@@ -7,7 +7,7 @@ The purpose of this lab is to import and run the Oracle APEX application for vie
 ## Prerequsite
 
 Completed lab 4  
-You need to run the script [logdata_t.sql](..files/logdata_t,sql) from sqldeveloper prior to importing the application  
+You need to run the script [logdata_t.sql](..files/logdata_t.sql) from sqldeveloper prior to importing the application  
 
 ## APEX logon and URL  
 

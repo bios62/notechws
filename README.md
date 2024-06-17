@@ -78,6 +78,23 @@ For the lab you may either use a python script where the sensor-data is manually
 
 ![Workflow diagram](images/lab_flow2.jpg?raw=true "Lab Flow")
 
+### URL for the labs
+
+Assume your userid is user25 and your password is password25.  
+  
+With the URL to Autonomous like : https://myautonomous.adb.eu-frankfurt-1.oraclecloudapps.com 
+The formal structure of the URL to database actions is:  
+
+`https://<URL to autnomous>/ords/<dbusername>/_sdw/?nav=worksheet`
+
+The URL to database actions, with SQL, ML and ORDS in this example will be:  
+  
+`https://myautonomous.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/_sdw/?nav=worksheet`
+
+The URL to the APEX Workspace is:
+
+https://<your ATP instance>.adb.eu-frankfurt-1.oraclecloudapps.com/ords/r/apex/workspace-sign-in/oracle-apex-sign-in
+
 ## Workshop part 1
 
 In this lab we will create tables and upload training data  
