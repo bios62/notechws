@@ -39,11 +39,7 @@ Download and run the scripts
 
  and run it from dbactions, either by copy/paste into sql area and run script, or run from the file   
 
- [runsql.png](../images/runsql.png)    
-
-  
-
-  
+   
 ** Note: Press F5 or select the correct button "run script" **  
   
 ![DB Actions](../images/dbactions2.jpg)
