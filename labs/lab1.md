@@ -20,7 +20,7 @@ The formal structure of the URL to database actions is:
 
 Select SQL Developer WEB  
 
-The direct URL to database actions, with SQL, ML and ORDS in this example will be:  
+The direct URL to SQL Developer WEB /database actions, with SQL, ML and ORDS in this example will be:  
   
 `https://myautonomous.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/_sdw/?nav=worksheet`
 
@@ -36,10 +36,9 @@ Logon and navigate to SQL:
 
 Download and run the scripts  
  [create_tables.sql](../files/create_table.sql)  
- [logdata_t.sql](../files/logdata_t.sql)  
  [positions.sql](../files/positions.sql)
 
- and run it from dbactions, either by copy/paste into sql area and run script, or run from the file   
+ and run it from SQL Developer WEB /database actions, either by copy/paste into sql area and run script, or run from the file   
 
    
 ** Note: Press F5 or select the correct button "run script" **  

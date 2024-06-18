@@ -1,8 +1,9 @@
 # Dataload, load trainingdata from Excel with Database actions  
 
-There are two wasys of loading data into the trip table:  
-- WIth the dataloader from excel
-- By SQL from preseeded table. Use this option in case you won't spend to much time of the excel part of the lab
+There are two ways of loading data into the trip table:  
+- With the dataloader from excel [excel](../files/kjoredataV2.xlsx)
+- By SQL from pre-seeded table. Use this option in case you won't spend to much time of the excel part of the lab
+
 
 Navigate to Database Actions and click on data load
 

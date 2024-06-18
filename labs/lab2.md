@@ -340,7 +340,7 @@ Since the input data does not contain speeds above 140kmh - we cannot be sure ab
 Finally since sql is fun - lets save also the GLM1 prediction in a table:
   
 ```
-drop table consumptionGLM -- if already existing;
+drop table consumptionGLM; -- if already existing
 
 create table consumptionGLM as select * from consumption;
 ```  

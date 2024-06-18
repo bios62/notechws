@@ -7,7 +7,6 @@ The purpose of this lab is to import and run the Oracle APEX application for vie
 ## Prerequsite
 
 Completed lab 4  
-You need to run the script [logdata_t.sql](..files/logdata_t.sql) from sqldeveloper prior to importing the application  
 
 ## APEX logon and URL  
 
@@ -41,6 +40,13 @@ Drag and drop, or select the ![APEX app](../files/apex_app.sql) file.
 
 Install the application  
 ![APEX App Install](../images/apex_install.png)
+
+Install script logdata_t.sql to enable push notification  
+
+You need to run the script [logdata_t.sql](..files/logdata_t.sql) from SQL Developer WEB or APEX SQL Commands  
+
+The script needs to be updated with the application ID from the import.
+![Screenshot of APEX SQL Commands](sqlcommands.sql)
 
 Run the application  
 ![APEX Run App](../images/apex_run.png)
