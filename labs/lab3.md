@@ -22,7 +22,7 @@ The lab gives step by step instruction on how to in build the REST APIs.
 
 ## Build ORDS REST API with script
 
-Copy/paste the script create_ords.sql (../files/create_ords.sql) into dbactions, and run as script, or do the interactive lab
+Copy/paste the script [](../files/create_ords.sql) into dbactions, and run as script, or do the interactive lab
 
 ## Create the ORDS REST Envrionment interatively
 
