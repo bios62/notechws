@@ -22,7 +22,7 @@ The lab gives step by step instruction on how to in build the REST APIs.
 
 ## Build ORDS REST API with script
 
-Copy/paste the script create_ords.sql [](../files/create_ords.sql) into dbactions, and run as script, or do the interactive lab
+Copy/paste the script create_ords.sql [create_ords.sql](../files/create_ords.sql) into dbactions, and run as script, or do the interactive lab
 
 ## Create the ORDS REST Envrionment interatively
 
@@ -36,6 +36,18 @@ Edit the lines with correct values:
 ```
 URL=https://myautonomous.adb.us-phoenix-1.oraclecloudapps.com
 USER=demouser03
+```
+Example run:  
+```
+curl -i -X POST -d '{"temp":18,"kmh":37}' -H 'Content-Type: application/json'
+ https://myautonomous.adb.eu-frankfurt-1.oraclecloudapps.com/ords/user25/wsapi/tempkmh
+HTTP/1.1 200 OK
+Date: Mon, 17 Jun 2024 12:24:26 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000;includeSubDomains
+X-Content-Type-Options: nosniff
+X-Request-ID: d09f988970a658f49508dd94716eb496
 ```
 
 ## Test a prediction with python
